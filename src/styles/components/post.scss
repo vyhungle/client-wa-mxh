@@ -1,0 +1,68 @@
+.card{
+    padding: 20px;
+    margin: 1px;
+    margin-top: 1px;
+    display: flex;
+    border-radius: 20px;
+    box-shadow:.25px .5px 1px 1.5px gainsboro;
+    overflow: hidden;
+    display: grid;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    
+    
+    .card__title{
+        display: flex;
+        position: relative;
+        >img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .card__title--conteint{
+           padding-left: 10px;
+           >span{
+               font-weight: bold;
+           }
+           >p{
+               margin-top: 2px;
+           }
+            
+        }
+        .card__title--icon{
+           
+           
+        }
+       
+    }
+    .card__body{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .card__image{
+        max-width: 698px;
+        height: 400px; 
+        display: inline;
+        border-radius: 20px;
+        overflow: hidden;
+        >img{
+            width: 698px;
+            height: 400px;
+            object-fit:cover;
+        }
+      
+        
+        
+    }
+    .card__bottom{
+        margin-top: 20px;
+        .card__bottom--button{
+            width: 80px;
+            height: 50px;
+            border-radius: 10px;
+           
+        }
+    
+    }
+}
