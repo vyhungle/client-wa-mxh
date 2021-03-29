@@ -11,6 +11,7 @@
     .menu-bar__search{
         
         margin: auto;
+        margin-top: 17px;
         margin-left: 0px;
         display: flex;
         align-items: center;    
@@ -29,7 +30,28 @@
             width: 100%;    
                
         }
+       
         
+    }
+    .menu-bar__list-right{
+        position: absolute;
+        right: 0;
+        margin-right: 8%;
+        margin-top: 5px;
+        .menu-bar__list-right--infor{
+            width: 50px;
+            height: 50px;
+            
+            >Button img{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                overflow: hidden;
+              
+
+            }
+          
+        }
     }
     
 }

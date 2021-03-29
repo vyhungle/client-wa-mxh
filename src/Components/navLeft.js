@@ -11,7 +11,7 @@ import PostAddIcon from '@material-ui/icons/PostAdd';
 import MessageIcon from '@material-ui/icons/Message';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 
-
+import { Link } from 'react-router-dom';
 
 export default function navLeft() {
  
@@ -27,12 +27,14 @@ export default function navLeft() {
       }
       className='menu-left'
     >
-      <ListItem button>
+     <Link to="/login">
+      <ListItem button as={Link} to="/asdaddxad" >
         <ListItemIcon className='menu-left__icon'>
           <HomeIcon />
         </ListItemIcon>
         <ListItemText primary="Home" />
       </ListItem>
+      </Link>
       <ListItem button>
         <ListItemIcon className='menu-left__icon'>
           <PostAddIcon />

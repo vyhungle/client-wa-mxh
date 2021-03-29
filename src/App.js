@@ -7,8 +7,9 @@ import './styles/App.scss'
 import {AuthProvider} from './Context/auth';
 /* import AuthRoute from './util/authRoute'; */
 
-import MenuBar from './Components/MenuBar/index';
 import Home from './Pages/home'
+import Login from './Pages/login'
+
 
 
 
@@ -16,8 +17,8 @@ function App() {
   return ( 
      <AuthProvider>
         <Router> 
-          <MenuBar/>
-          <Route exact path='/' component={Home}/>      
+          <Route exact path='/' component={Home}/>  
+          <Route exact path='/login' component={Login}/>  
        </Router>   
      </AuthProvider>
   );
