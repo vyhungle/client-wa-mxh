@@ -1,18 +1,22 @@
 .menu-left{
     width: 100%;
-    box-shadow:.25px .5px 1px 1.5px gainsboro;
+    border: .5px gainsboro solid;
     border-radius: 20px;
     color: #BBBBBB;
     background-color: #FFFFFF;
     margin: 1px;
     overflow: hidden;
-    .menu-left__title{
-        padding-top: 20px;
-        font-size: 20px;
-        color: #BBBBBB;
-        font-weight: bold;
-    }
     .menu-left__icon{
-        color: #90A777;
+        
+        
+    }
+    
+}
+.MuiListItemText-root{
+    color: #BBBBBB;
+  
+    &:hover{
+        text-decoration: none;
+        
     }
 }

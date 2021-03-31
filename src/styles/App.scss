@@ -5,9 +5,10 @@
 @import './menuBar.scss';
 @import './components//menuLef.scss';
 @import '../styles/components/post.scss';
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
 body{
-  background-color: #FDFDFC;
+  background-color: #F7F7FA;
 }
 html {
   overscroll-behavior: none;
@@ -17,3 +18,12 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.link{
+  text-decoration: none;
+  color: black;
+  &:hover{
+    color: black;
+    text-decoration: none;
+  }
+}

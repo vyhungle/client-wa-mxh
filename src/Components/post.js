@@ -1,7 +1,9 @@
 import React from 'react'
 import IconButton from '@material-ui/core/IconButton';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
-import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
+
+import MessageIcon from '@material-ui/icons/Message';
+import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ShareIcon from '@material-ui/icons/Share';
 import moment from "moment";
 
 function Post({ post: { id,
@@ -35,13 +37,18 @@ function Post({ post: { id,
             </div>
             <div className='card__bottom'>
                 <IconButton className='card__bottom--button'>
-                    <FavoriteBorderIcon />
-                    <p style={{paddingLeft:"5px"}}>{likeCount}</p>
+                    <ThumbUpIcon />
+                    <p>{likeCount}</p>
                 </IconButton>
                 
                 <IconButton className="card__bottom--button">
-                    <ChatBubbleOutlineIcon />
+                    <MessageIcon />
                     <p style={{paddingLeft:"5px"}}>{commentCount}</p>
+                </IconButton>
+
+                <IconButton className="card__bottom--button">
+                    <ShareIcon />
+                    <p style={{paddingLeft:"5px"}}>0</p>
                 </IconButton>
 
             </div>

@@ -1,75 +1,49 @@
 
-.menu-bar{   
+.menu-header{   
     position: relative;
-    background-color: #90A777;
     margin-top: 0;
-    height: 100px;
-    .menu-bar__title{
-        margin-left: 6%; 
-        color: #FEFCFF;    
-    }
-    .menu-bar__search{
-        
-        margin: auto;
-        margin-top: 17px;
-        margin-left: 0px;
-        display: flex;
-        align-items: center;    
-        border:1px solid none;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    .menu-header_input{
         border-radius: 10px;
-        height: 50px;
-        background-color: #7A925F;
-        color: #AAB69B;
-        .menu-bar__search--icon{
-            margin-left: 20px;  
-            height: 40px;   
-        }
-        .menu-bar__search--input{     
-            margin-left: 20px;    
-            height: 40px;    
-            width: 100%;    
-               
-        }
-       
+        border: .5px gainsboro solid;
+        display: flex;
+        align-items: center;  
+        height: 45px;  
+        background-color: #FFFFFF;
+        
         
     }
-    .menu-bar__list-right{
-        position: absolute;
-        right: 0;
-        margin-right: 8%;
-        margin-top: 5px;
-        .menu-bar__list-right--infor{
-            width: 50px;
-            height: 50px;
-            
-            >Button img{
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                overflow: hidden;
-              
-
+    .menu-header__right{
+       
+        >div{
+            float: right;
+            background-color: brown;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            >img{
+                width: 45px;
+                height: 45px;
             }
-          
         }
     }
     
+    
 }
-.menu-layout{
-    padding-left: 6%; 
-    margin-top: 30px;
-    .menu-layout__box{
-
+.layout{
+    margin-top: 15px;
+    height: 100%;
+    .layout__left{
+        
     }
-}
-   
-
-
-.active{
-    background-color: #FFFFFF;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow:.25px .5px 1px 1.5px gainsboro;
-    padding: 20px;
-
+    .layout__content{
+        padding: 0;
+    }
+    .layout__right{
+        
+    }
 }

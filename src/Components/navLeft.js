@@ -20,21 +20,17 @@ export default function navLeft() {
     <List
       component="nav"
       aria-labelledby="nested-list-subheader"
-      subheader={
-        <ListSubheader component="div" id="nested-list-subheader" className="menu-left__title"> 
-          MENU
-        </ListSubheader>
-      }
+     
       className='menu-left'
     >
-     <Link to="/login">
-      <ListItem button as={Link} to="/asdaddxad" >
+    
+      <ListItem button >
         <ListItemIcon className='menu-left__icon'>
           <HomeIcon />
         </ListItemIcon>
-        <ListItemText primary="Home" />
+        <ListItemText primary="Home"/>
       </ListItem>
-      </Link>
+     
       <ListItem button>
         <ListItemIcon className='menu-left__icon'>
           <PostAddIcon />
