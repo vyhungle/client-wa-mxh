@@ -1,11 +1,15 @@
-
+//
+@import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 //components
 @import './menuBar.scss';
 @import './components//menuLef.scss';
 @import '../styles/components/post.scss';
-@import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+//pages
+@import '../styles//pages/login.scss';
 
 body{
   background-color: #F7F7FA;

@@ -5,10 +5,11 @@ import './styles/App.scss'
 
 
 import {AuthProvider} from './Context/auth';
-/* import AuthRoute from './util/authRoute'; */
+import AuthRoute from './util/authRoute';
 
 import Home from './Pages/home'
 import Login from './Pages/login'
+import Register from "./Pages/register";
 
 
 
@@ -18,7 +19,8 @@ function App() {
      <AuthProvider>
         <Router> 
           <Route exact path='/' component={Home}/>  
-          <Route exact path='/login' component={Login}/>  
+          <AuthRoute exact path='/login' component={Login}/>
+          <AuthRoute exact path='/register' component={Register}/>
        </Router>   
      </AuthProvider>
   );

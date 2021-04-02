@@ -1,0 +1,58 @@
+.login{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    .login__loading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    >form{
+        width: 600px;
+        height: 500px;
+        border-radius: 20px;
+        border: .75 solid gainsboro;
+        background-color: #FFFFFF;
+        padding-left: 90px;
+        padding-top: 100px;
+        >h2{
+            padding-left: 25px;
+            padding-bottom: 20px;
+        }
+        
+        >input{
+            width: 400px;
+            height: 45px;
+            border-radius: 10px;
+            padding-left:15px ;
+            margin-bottom:5px ;
+            border: none;
+            border:.75px solid gainsboro;
+            overflow: hidden;
+            &:focus{
+                border:none;
+                
+            }
+        }
+        .layout__bottom{
+            display: flex;
+            align-items: center;
+            >button{
+                height: 45px;
+                width: 75px;
+                border-radius: 10px;                
+                border: .75px solid gainsboro;
+            }
+            >a{
+                padding-left: 10px;
+                text-decoration: none;
+            }
+        }
+        .login__error{
+            color: red;
+        }
+       
+    }
+}

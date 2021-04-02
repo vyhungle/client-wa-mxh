@@ -1,7 +1,6 @@
 import React from 'react'
 import { useQuery } from "@apollo/react-hooks";
-import { GET_POSTS } from "../Graphql/index";
-import Grid from '@material-ui/core/Grid';
+import { GET_POSTS } from "../Graphql/query";
 import Post from '../Components/post'
 import { Scrollbars } from 'rc-scrollbars';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -24,7 +23,7 @@ function Posts() {
                 <>
                 {posts.posts&&
                 posts.posts.map((post)=>(
-                    <Post post={post}/>
+                    <Post post={post} key={post.id}/>
                 ))}
                 </>
             )}

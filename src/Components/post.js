@@ -6,13 +6,11 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ShareIcon from '@material-ui/icons/Share';
 import moment from "moment";
 
-function Post({ post: { id,
+function Post({ post: { 
     body,
     createdAt,
     displayname,
     image,
-    comments,
-    likes,
     likeCount,
     commentCount
 } }) {
@@ -33,7 +31,7 @@ function Post({ post: { id,
             </div>
             <div className='card__body'>{body}</div>
             <div className='card__image'>
-                <img src={image} alt="image post" />
+                <img src={image} alt="imagepost" />
             </div>
             <div className='card__bottom'>
                 <IconButton className='card__bottom--button'>

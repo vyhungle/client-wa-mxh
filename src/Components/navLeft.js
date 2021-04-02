@@ -1,6 +1,5 @@
 import React from 'react';
 
-import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -10,8 +9,6 @@ import HomeIcon from '@material-ui/icons/Home';
 import PostAddIcon from '@material-ui/icons/PostAdd';
 import MessageIcon from '@material-ui/icons/Message';
 import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
-
-import { Link } from 'react-router-dom';
 
 export default function navLeft() {
  

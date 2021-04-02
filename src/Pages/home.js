@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Link } from 'react-router-dom';
-
 import { Container, Row, Col } from "react-bootstrap";
 
 
 import MenuLeft from "../Components/navLeft";
 import Posts from "../Components/posts";
+import { AuthContext } from "../Context/auth";
 
 
 
@@ -17,7 +17,7 @@ import Posts from "../Components/posts";
 
 
 export default function Home() {
-
+  const {user,logout}=useContext(AuthContext);
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleClick = (event) => {
@@ -27,8 +27,6 @@ export default function Home() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-
 
 
   return (
@@ -44,6 +42,7 @@ export default function Home() {
             <div aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
               <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" alt="avatar" />
             </div>
+            
             <Menu
               id="simple-menu"
               anchorEl={anchorEl}
@@ -54,11 +53,17 @@ export default function Home() {
             >
               <MenuItem onClick={handleClose}>Profile</MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>
-              <Link to={"/login"} className="link">
+              {user ?(          
+                <MenuItem onClick={logout}>logout</MenuItem>            
+              ):(
+                <Link to={"/login"} className="link">
                 <MenuItem onClick={handleClose}>Login</MenuItem>
               </Link>
+              )}
+             
               
             </Menu>
+            
           </Col>
         </Row>
       </Container>
