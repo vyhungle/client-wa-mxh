@@ -1,0 +1,19 @@
+.comment{
+    margin-top: 20px;
+    margin-left: 20px;
+    >div{
+        display: flex;
+        padding: 10px;
+        >img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+        }
+        >p{
+            margin: auto;
+            margin-left: 10px;
+        }
+    }
+}

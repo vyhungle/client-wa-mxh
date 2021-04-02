@@ -41,6 +41,7 @@ export default function navLeft() {
         </Col>
         <Col xs={10} className="member">
          <div className="member__list"> 
+            <h5>Online Contacts</h5>
             <ListFriend/>
          </div>
         </Col>

@@ -1,0 +1,30 @@
+.form-comment{
+    margin-top: 20px;
+    width: 100%;
+    >form{
+        display: inline;
+        >img{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+        >input{
+            width: 590px;
+            height: 40px;
+            border-radius: 15px;
+            border: none;
+            border: .75px solid gainsboro;
+        }
+        >button{
+            height: 40px;
+            border-radius: 15px;
+            background: #FFFFFF;
+            border:none;
+            border: .75px solid gainsboro;
+            margin-left: 10px;
+        }
+    }
+}

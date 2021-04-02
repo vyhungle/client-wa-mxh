@@ -1,7 +1,6 @@
 import gql from "graphql-tag";
 
 export const GET_POSTS=gql`
-
      query getPosts($limit:Int!){
       getPosts(limit:$limit) {
         posts{
@@ -26,6 +25,20 @@ export const GET_POSTS=gql`
       }
     }
 }`;
+
+export const GET_COMMENT=gql`
+  query getPost($postId:ID!){
+  getPost(postId:$postId){
+    comments{
+      createdAt
+      username
+      displayname
+      body
+      avatar
+    }
+  }
+}
+`;
 
 
     

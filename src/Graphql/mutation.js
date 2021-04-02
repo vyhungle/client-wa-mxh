@@ -32,6 +32,20 @@ export const LIKEPOST = gql`
   }
 `;
 
+export const CREATE_COMMENT=gql `
+mutation createComment($postId:String!,$body:String!){
+  createComment(postId:$postId body:$body){
+    comments{
+      createdAt
+      username
+      displayname
+      body
+      avatar
+    }
+  }
+}
+`
+
 export const REGISTER = gql`
 mutation register(
   $username: String!
