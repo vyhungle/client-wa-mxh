@@ -2,56 +2,51 @@ import React from 'react';
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
+import { Row, Col, Container } from "react-bootstrap";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import HomeIcon from '@material-ui/icons/Home';
-import PostAddIcon from '@material-ui/icons/PostAdd';
-import MessageIcon from '@material-ui/icons/Message';
-import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
+import ListFriend from "../Components/friendList";
 
 export default function navLeft() {
- 
+
 
   return (
-    <List
-      component="nav"
-      aria-labelledby="nested-list-subheader"
-     
-      className='menu-left'
-    >
-    
-      <ListItem button >
-        <ListItemIcon className='menu-left__icon'>
-          <HomeIcon />
-        </ListItemIcon>
-        <ListItemText primary="Home"/>
-      </ListItem>
-     
-      <ListItem button>
-        <ListItemIcon className='menu-left__icon'>
-          <PostAddIcon />
-        </ListItemIcon>
-        <ListItemText primary="Posts" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon className='menu-left__icon'>
-          <MessageIcon />
-        </ListItemIcon>
-        <ListItemText primary="Messages" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon className='menu-left__icon'>
-          <SupervisorAccountIcon />
-        </ListItemIcon>
-        <ListItemText primary="Friends" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon className='menu-left__icon'>
-          <MessageIcon />
-        </ListItemIcon>
-        <ListItemText primary="Messages" />
-      </ListItem>
-    </List>
+    <div>
+      <Row>
+        <Col xs={2} className="menu">
+          <List className="menu__listIcon">
+            <ListItem  button>
+              <FontAwesomeIcon icon="home"/>
+            </ListItem>
+            <ListItem button>
+            <FontAwesomeIcon icon="newspaper"/>
+            </ListItem>
+            <ListItem button>
+            <FontAwesomeIcon icon="bell"/>
+            </ListItem>
+            <ListItem button>
+            <FontAwesomeIcon icon="comment-dots"/>
+            </ListItem>
+            <ListItem button>
+            <FontAwesomeIcon icon="user-friends"/>
+            </ListItem>  
+            <ListItem button>   
+            <FontAwesomeIcon icon='users'/>
+            </ListItem>    
+            <ListItem button>
+            <FontAwesomeIcon icon="user-cog"/>
+            </ListItem>  
+            
+          </List>
+        </Col>
+        <Col xs={10} className="member">
+         <div className="member__list"> 
+            <ListFriend/>
+         </div>
+        </Col>
+      </Row>
+
+    </div>
+
   );
 }

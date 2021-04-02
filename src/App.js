@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import './styles/App.scss'
+import './styles/App.scss';
+import "./Fonts/awsomeIcons";
 
 
 import {AuthProvider} from './Context/auth';

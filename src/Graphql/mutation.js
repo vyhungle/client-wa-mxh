@@ -19,6 +19,19 @@ mutation login($username:String!,$password:String!){
     }
 }`;
 
+export const LIKEPOST = gql`
+  mutation likePost($postId: ID!) {
+    likePost(postId: $postId) {
+      id
+      likes {
+        id
+        username
+      }
+      likeCount
+    }
+  }
+`;
+
 export const REGISTER = gql`
 mutation register(
   $username: String!
@@ -51,6 +64,7 @@ mutation register(
   }
 }
 `;
+
 
     
    

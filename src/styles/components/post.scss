@@ -41,12 +41,17 @@
         padding-bottom: 10px;
     }
     .card__image{
-        max-width: 698px;
+        max-width: 100%;
         height: 400px; 
         display: inline;
-        border-radius: 20px;
+        
         overflow: hidden;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
         >img{
+            border-radius: 20px;
             width: 698px;
             height: 400px;
             object-fit:cover;
@@ -70,6 +75,19 @@
                }
             }         
            
+        }
+        .card__bottom--button-liked{
+            width: 60px;
+            height: 40px;
+            border-radius: 10px;
+            .MuiIconButton-label{
+                color:#167BFF;
+               >p{
+                   padding-top: 5px;
+                   font-size: 12px;
+                   padding-left: 3px;
+               }
+            }  
         }
     
     }

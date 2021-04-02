@@ -10,13 +10,13 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 function Posts() {
     const {loading,data:{getPosts:posts}={}}=useQuery(GET_POSTS,{
         variables:{
-            limit:100,
+            limit:10,
         },
-        pollInterval:1000
+        pollInterval:500
         
     })
     return (    
-      <Scrollbars style={{height:"800px"}} >     
+      <Scrollbars style={{height:"100vh"}} >     
             {loading ? (
                 <CircularProgress color="primary" />
             ):(

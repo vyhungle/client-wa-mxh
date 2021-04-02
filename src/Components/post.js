@@ -1,21 +1,36 @@
-import React from 'react'
+import React,{useState,useContext,useEffect} from 'react'
 import IconButton from '@material-ui/core/IconButton';
-
-import MessageIcon from '@material-ui/icons/Message';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import ShareIcon from '@material-ui/icons/Share';
 import moment from "moment";
+import { useMutation } from "@apollo/react-hooks";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { AuthContext } from "../Context/auth";
+import { LIKEPOST } from "../Graphql/mutation";
 
 function Post({ post: { 
+    id,
     body,
     createdAt,
     displayname,
     image,
     likeCount,
+    likes,
     commentCount
 } }) {
-
-
+    const user=useContext(AuthContext);
+    const [liked, setLiked] = useState(false);
+    useEffect(() => {
+        if (user.user && likes.find((like) => like.username === user.user.username)) {
+          setLiked(true);
+        } else setLiked(false);
+    }, [user, likes]);
+    
+    const [likepost]=useMutation(LIKEPOST);
+    function likePost() {
+        likepost({
+            variables:{postId:id}
+        })
+    }
     return (
         <div className='card'>
             <div className='card__title'>
@@ -34,18 +49,26 @@ function Post({ post: {
                 <img src={image} alt="imagepost" />
             </div>
             <div className='card__bottom'>
-                <IconButton className='card__bottom--button'>
-                    <ThumbUpIcon />
+            {liked ?(
+                <IconButton className='card__bottom--button-liked' onClick={likePost}>
+                    <FontAwesomeIcon icon='thumbs-up'/>
                     <p>{likeCount}</p>
                 </IconButton>
+            ):(
+                <IconButton className='card__bottom--button' onClick={likePost}>
+                <FontAwesomeIcon icon='thumbs-up'/>
+                    <p>{likeCount}</p>
+                </IconButton>
+            )}
+                
                 
                 <IconButton className="card__bottom--button">
-                    <MessageIcon />
+                <FontAwesomeIcon icon='comments'/>
                     <p style={{paddingLeft:"5px"}}>{commentCount}</p>
                 </IconButton>
 
                 <IconButton className="card__bottom--button">
-                    <ShareIcon />
+                <FontAwesomeIcon icon='share'/>
                     <p style={{paddingLeft:"5px"}}>0</p>
                 </IconButton>
 
