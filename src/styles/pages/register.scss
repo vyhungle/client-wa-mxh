@@ -1,0 +1,55 @@
+.register{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color:#1C8EF9 ;
+    height: 100vh;
+    .register__loading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    >form{
+        padding-left: 100px;
+        padding-top: 70px;
+        background-color: #FFFFFF;
+        width: 600px;
+        height: 700px;
+        border-radius: 20px;
+        >h2{
+            margin-bottom: 15px;
+        }   
+        .register__input{
+            display: grid;
+          
+            >label{
+                font-size: 17px;
+                font-weight: 600;
+            }
+            >input{
+                width: 400px;
+                height: 45px;
+                border-radius: 10px;
+                border:none;
+                border:.75px solid gainsboro;
+                padding-left: 10px;
+            }
+        }
+        >button{
+            width: 200px;
+            height: 45px;
+            border: none;
+            border-radius: 10px;
+            border: .75px solid gainsboro;
+            margin-top: 20px;
+            background-color: #167BFF;
+            color: #FFFFFF;
+        }
+        .register__error{
+            color: red;
+        }
+    }
+  
+   
+}

@@ -24,7 +24,7 @@ mutation register(
   $username: String!
   $email: String!
   $password: String!
-  $comfirmPassword: String!
+  $confirmPassword: String!
   $displayname:String!
 ) {
   register(
@@ -32,7 +32,7 @@ mutation register(
       username: $username
       email: $email
       password: $password
-      confirmPassword: $comfirmPassword
+      confirmPassword: $confirmPassword
       displayname:$displayname
     }
   ) {
