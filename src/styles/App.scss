@@ -9,6 +9,8 @@
 @import '../styles//components//listFriend.scss';
 @import '../styles//components//formComment.scss';
 @import '../styles//components//comment.scss';
+@import '../styles//components/listUser.scss';
+@import '../styles//components//formPost.scss';
 
 
 //pages
@@ -19,6 +21,8 @@ body{
   background-color: #F7F7FA;
  /*  width: 90%;
   margin-left: 5%; */
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 html {
   overscroll-behavior: none;
@@ -37,3 +41,5 @@ html {
     text-decoration: none;
   }
 }
+
+

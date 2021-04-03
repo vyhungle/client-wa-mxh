@@ -9,6 +9,7 @@ export const GET_POSTS=gql`
             createdAt
             displayname
             image
+            avatar
             comments{
             id
             createdAt
@@ -30,6 +31,7 @@ export const GET_COMMENT=gql`
   query getPost($postId:ID!){
   getPost(postId:$postId){
     comments{
+      id
       createdAt
       username
       displayname
@@ -39,6 +41,45 @@ export const GET_COMMENT=gql`
   }
 }
 `;
+
+export const GET_USER=gql `
+query getUser {
+  getUser{
+    id
+    email
+    displayname
+    createdAt
+    profile{
+      avatar
+      dateOfBirth
+      story
+      follower
+      following
+      story
+    }
+   friends{
+    id
+    username
+    createdAt
+  }
+    
+  }
+}
+`;
+
+export const GET_USERS= gql `
+  query getUsers {
+  getUsers{
+    id
+    email
+    displayname
+    profile{
+      avatar
+    }
+    
+  }
+}
+`
 
 
     

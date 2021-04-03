@@ -5,6 +5,8 @@ import Post from '../Components/post'
 import { Scrollbars } from 'rc-scrollbars';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
+import FormPost from "../Components/formPost";
+
 
 
 function Posts() {
@@ -16,7 +18,8 @@ function Posts() {
         
     })
     return (    
-      <Scrollbars style={{height:"100vh"}} >     
+      <Scrollbars style={{height:"100vh"}} autoHide >   
+            <FormPost/>  
             {loading ? (
                 <CircularProgress color="primary" />
             ):(

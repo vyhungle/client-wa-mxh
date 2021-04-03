@@ -9,6 +9,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import MenuLeft from "../Components/navLeft";
 import Posts from "../Components/posts";
+import ListUser from "../Components/loadUser";
 import { AuthContext } from "../Context/auth";
 
 
@@ -77,7 +78,13 @@ export default function Home() {
           <Col className="layout__content">
             <Posts />
           </Col>
-          <Col xs={3} className="layout__right"></Col>
+          <Col xs={3} className="layout__right">
+                
+                <Row>
+                  <Col xs={10}><ListUser/></Col>
+                  <Col xs={2}></Col>
+                </Row>
+          </Col>
         </Row>
       </Container>
     </div>
