@@ -89,6 +89,20 @@ export const CREATE_POST=gql `
 }
 `;
 
+export const FIND_USERS= gql `
+mutation findUsers($displayname:String!){
+  findUsers(displayname:$displayname){
+    id
+    email
+    username
+    createdAt
+    displayname
+    profile{
+      avatar
+    }
+  }
+}`;
+
 
     
    

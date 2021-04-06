@@ -4,7 +4,7 @@ import { useQuery } from "@apollo/react-hooks";
 import { GET_COMMENT } from "../Graphql/query";
 function LoadComment({id}) {
 
-    const{loading,data:{getPost:post}={}}=useQuery(GET_COMMENT,{
+    const{data:{getPost:post}={}}=useQuery(GET_COMMENT,{
         variables:{
             postId:id
         },
@@ -15,7 +15,7 @@ function LoadComment({id}) {
         <div className="comment">
         {post && post.comments.map((Comment)=>(
             <div key={Comment.id}>
-                <img src={Comment.avatar}/>
+                <img src={Comment.avatar} alt="avatar"/>
                 <p>{Comment.body}</p>
             </div>
         ))}

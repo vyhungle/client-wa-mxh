@@ -4,6 +4,7 @@ import { Row, Col, Container } from "react-bootstrap";
 import MenuLeft from "../Components/navLeft";
 import MenuTop from "../Components/menuTop";
 import ListChat from "../Components/listChat";
+import ContentChat from "../Components/contentChat";
 
 function RoomChat() {
     return (
@@ -17,9 +18,12 @@ function RoomChat() {
                           <Col xs={4}>
                               <ListChat/>
                           </Col>
-                          <Col ></Col>
+                          <Col>
+                            <ContentChat/>
+                          </Col>
                       </Row>
                     </Col>
+                    <Col xs={1}></Col>
                    
                 </Row>
             </Container>

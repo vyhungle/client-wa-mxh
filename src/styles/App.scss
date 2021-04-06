@@ -12,6 +12,7 @@
 @import '../styles//components/listUser.scss';
 @import '../styles//components//formPost.scss';
 @import './components//listChat.scss';
+@import './components//contentChat.scss';
 
 
 
@@ -24,7 +25,7 @@ body{
   background-color: #F7F7FA;
  /*  width: 90%;
   margin-left: 5%; */
-/*   overflow-y: hidden; */
+  overflow-y: hidden;
   overflow-x: hidden;
 }
 html {

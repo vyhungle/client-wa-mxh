@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react';
+import React from 'react';
 
 import { Container, Row, Col } from "react-bootstrap";
 
@@ -7,11 +7,6 @@ import ListFriend from "../Components/friendList";
 import MenuLeft from "../Components/navLeft";
 import Posts from "../Components/posts";
 import ListUser from "../Components/loadUser";
-
-
-
-
-
 
 
 export default function Home() {

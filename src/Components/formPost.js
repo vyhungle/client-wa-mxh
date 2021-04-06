@@ -1,5 +1,5 @@
-import React,{useState} from 'react'
-import { useFormik,Formik,Form,Field } from "formik";
+import React from 'react'
+import { Formik,Form } from "formik";
 import { useMutation } from "@apollo/react-hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -22,7 +22,7 @@ function FormPost() {
       
     }
 
-    const [createPost,{loading}]=useMutation(CREATE_POST)
+    const [createPost]=useMutation(CREATE_POST)
 
 
    
@@ -35,7 +35,7 @@ function FormPost() {
                 }}
                 onSubmit={(values)=>{
                     if(values.body==="" && values.image===""){
-                        console.log("null")
+                       
                     }
                     else{
                         createPost({

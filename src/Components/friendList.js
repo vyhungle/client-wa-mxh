@@ -1,12 +1,12 @@
 import React from 'react'
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+/* import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem'; */
 
 function SingleFriendList() {
     return (
         <div className="member">
          <h5>Online Contacts</h5>
-            <List className="list-friend">
+           {/*  <List className="list-friend">
                 <ListItem>
                     <div className="list-friend__content">
                         <div>
@@ -67,7 +67,7 @@ function SingleFriendList() {
                         <p>Nana Wasiel</p>
                     </div>
                 </ListItem>
-            </List>
+            </List> */}
         </div>
     )
 }

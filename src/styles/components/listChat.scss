@@ -1,4 +1,6 @@
 .listchat{
+    border-right:.75px solid gainsboro ;
+    height:  88.5vh;
     
     .listchat__popup{
         border-radius: 20px;
@@ -14,9 +16,9 @@
             height: 45px;
             width: 500px;
             display: flex;
-            
             padding-top: 10px;
             border-bottom: solid 1px gainsboro;
+           
             .fa-times{
                 color: black;
                 margin-right: 15px;               
@@ -40,10 +42,14 @@
                 border:.75px solid gainsboro;
                 outline: none;
                 padding-left: 10px;
+              
                
                
             }
           
+        }
+        .listchat__popup--member{
+            
         }
     }
     .listchat__top{
@@ -52,8 +58,7 @@
         border-bottom: solid 1px gainsboro;
         .listchat__top--icon{        
             position: absolute;
-            right: 0;
-            margin-right: 15px;
+            right: 15px;
             margin-top: 5px;
             z-index: 0;
             margin-right: 15px;
@@ -64,7 +69,7 @@
     .listchat__form{
         margin-top: 10px;
         >input{
-            width: 100%;
+            width: 96%;
             border-radius: 10px;
             height: 35px;
             border:.75px solid gainsboro;
