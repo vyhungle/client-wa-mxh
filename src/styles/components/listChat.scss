@@ -1,0 +1,77 @@
+.listchat{
+    
+    .listchat__popup{
+        border-radius: 20px;
+        height: 550px;
+        width: 500px;
+        margin-left: 20px;
+        margin-top: 30px;
+        background:#FFFFFF;
+        margin-left: 500px;
+        margin-top: 70px;
+        
+        .listchat__popup--top{
+            height: 45px;
+            width: 500px;
+            display: flex;
+            
+            padding-top: 10px;
+            border-bottom: solid 1px gainsboro;
+            .fa-times{
+                color: black;
+                margin-right: 15px;               
+                margin-top: 5px;
+                margin-left: 15px;
+                
+            }
+            >button{
+              margin-left: 280px;
+              border: .75px solid gainsboro;
+              border-radius:10px ;
+              max-height: 30px;
+            }
+        }   
+        .listchat__popup--input{
+            padding: 10px;
+            >input{
+                width: 100%;
+                border-radius: 10px;
+                height: 35px;
+                border:.75px solid gainsboro;
+                outline: none;
+                padding-left: 10px;
+               
+               
+            }
+          
+        }
+    }
+    .listchat__top{
+        display: flex;
+        padding-top: 10px;
+        border-bottom: solid 1px gainsboro;
+        .listchat__top--icon{        
+            position: absolute;
+            right: 0;
+            margin-right: 15px;
+            margin-top: 5px;
+            z-index: 0;
+            margin-right: 15px;
+          
+            
+        }
+    }
+    .listchat__form{
+        margin-top: 10px;
+        >input{
+            width: 100%;
+            border-radius: 10px;
+            height: 35px;
+            border:.75px solid gainsboro;
+            outline: none;
+            padding-left: 10px;
+            
+        }
+    }
+    .listchat__member{}
+}

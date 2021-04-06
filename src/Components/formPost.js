@@ -7,7 +7,7 @@ import { CREATE_POST } from "../Graphql/mutation";
 
 
 function FormPost() {
-    var base64Image="aaaaaaa";
+    var base64Image="";
 
     function uploadImage(files,formProps){
         const file = files[0]

@@ -4,7 +4,8 @@ import ListItem from '@material-ui/core/ListItem';
 
 function SingleFriendList() {
     return (
-        <div>
+        <div className="member">
+         <h5>Online Contacts</h5>
             <List className="list-friend">
                 <ListItem>
                     <div className="list-friend__content">

@@ -11,17 +11,20 @@
 @import '../styles//components//comment.scss';
 @import '../styles//components/listUser.scss';
 @import '../styles//components//formPost.scss';
+@import './components//listChat.scss';
+
 
 
 //pages
 @import '../styles//pages/login.scss';
 @import '../styles/pages/register.scss';
+@import '../styles/pages/roomChat.scss';
 
 body{
   background-color: #F7F7FA;
  /*  width: 90%;
   margin-left: 5%; */
-  overflow-y: hidden;
+/*   overflow-y: hidden; */
   overflow-x: hidden;
 }
 html {
@@ -42,4 +45,14 @@ html {
   }
 }
 
+
+.popup{
+  width: 1000vh;
+  height: 100vh;
+  background:rgba(0,0,0,.7);
+  position: absolute;
+  top: -70px;
+  left: -500px;
+  z-index: 10;
+}
 

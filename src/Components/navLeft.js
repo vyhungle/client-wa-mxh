@@ -4,8 +4,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import { Row, Col, Container } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
-import ListFriend from "../Components/friendList";
 
 export default function navLeft() {
 
@@ -13,41 +13,43 @@ export default function navLeft() {
   return (
     <div>
       <Row>
-        <Col xs={2} className="menu">
-          <List className="menu__listIcon">
-            <ListItem  button>
+        <Col xs={1}>
+         
+        </Col>
+        <Col xs={10} className="menu">
+        <List className="menu__listIcon">
+           <Link to="/">
+           <ListItem  button>
               <FontAwesomeIcon icon="home"/>
+              <span>Home</span>
             </ListItem>
+           </Link>
             <ListItem button>
             <FontAwesomeIcon icon="newspaper"/>
+            <span>Articles</span>
             </ListItem>
             <ListItem button>
             <FontAwesomeIcon icon="bell"/>
+            <span>Notifications</span>
             </ListItem>
-            <ListItem button>
+            <Link to="/chat">
+            <ListItem button   to="/chat">
             <FontAwesomeIcon icon="comment-dots"/>
+            <span>Messages</span>
             </ListItem>
+            </Link>
             <ListItem button>
             <FontAwesomeIcon icon="user-friends"/>
+            <span>Friends</span>
             </ListItem>  
             <ListItem button>   
             <FontAwesomeIcon icon='users'/>
+            <span>Groups</span>
             </ListItem>    
-            <ListItem button>
-            <FontAwesomeIcon icon="user-cog"/>
-            </ListItem>  
-            
           </List>
-        </Col>
-        <Col xs={10} className="member">
-         <div className="member__list"> 
-            <h5>Online Contacts</h5>
-            <ListFriend/>
-         </div>
         </Col>
       </Row>
 
     </div>
-
   );
 }

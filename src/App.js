@@ -11,6 +11,7 @@ import AuthRoute from './util/authRoute';
 import Home from './Pages/home'
 import Login from './Pages/login'
 import Register from "./Pages/register";
+import Chat from "./Pages/roomChat";
 
 
 
@@ -22,6 +23,7 @@ function App() {
           <Route exact path='/' component={Home}/>  
           <AuthRoute exact path='/login' component={Login}/>
           <AuthRoute exact path='/register' component={Register}/>
+          <Route exact path='/chat' component={Chat}/>  
        </Router>   
      </AuthProvider>
   );
