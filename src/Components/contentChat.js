@@ -7,7 +7,9 @@ function ContentChat() {
                 <h5>Name</h5>
 
             </div>
-            <div className="content-chat__body"></div>
+            <div className="content-chat__body">
+                
+            </div>
             <div className="content-chat__form">
                 <input
                     placeholder="Aa"
