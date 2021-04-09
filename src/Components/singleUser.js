@@ -1,9 +1,19 @@
 import React from 'react'
-import { useQuery } from "@apollo/react-hooks";
-
+import { useMutation } from "@apollo/react-hooks";
 import ListItem from '@material-ui/core/ListItem';
 
-function SingleUser({user:{displayname,profile}}) {
+import { CREATE_ROOM_CHAT} from "../Graphql/mutation"
+
+function SingleUser({user:{id,displayname,profile}}) {
+    
+    const [createRoom,{loading}] =useMutation(CREATE_ROOM_CHAT)
+    function setId(){
+        createRoom({
+            variables:{
+                userId:id
+            }
+        })
+    }
     return (
                 <ListItem>
                     <div>
@@ -12,7 +22,10 @@ function SingleUser({user:{displayname,profile}}) {
                         </div>
                     </div>
                     <p>{displayname}</p>
-                    <button>Add</button>                   
+                    {loading ? (
+                        "..."
+                    ):(<button type="button" onClick={setId}>Add</button>)}
+                                       
                 </ListItem>
     )
 }

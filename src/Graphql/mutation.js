@@ -103,6 +103,35 @@ mutation findUsers($displayname:String!){
   }
 }`;
 
+export const CREATE_ROOM_CHAT= gql `
+mutation createRoomChat($userId:String!){
+  createRoomChat(userId:$userId){
+    id
+    from
+    to
+    content{
+      id
+      username
+      createdAt
+      content
+    }
+  }
+}`;
+
+
+export const CREATE_CONTENT_CHAT=gql `
+mutation createContentChat($roomId:String!, $content:String!) {
+  createContentChat(roomId:$roomId content:$content){
+    content{
+      displayname
+      username
+      id
+      createdAt
+      content
+    }
+    id
+  }
+}`;
 
     
    

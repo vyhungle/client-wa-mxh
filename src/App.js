@@ -24,6 +24,7 @@ function App() {
           <AuthRoute exact path='/login' component={Login}/>
           <AuthRoute exact path='/register' component={Register}/>
           <Route exact path='/chat' component={Chat}/>  
+          <Route exact path='/chat/:id' component={Chat}/>  
        </Router>   
      </AuthProvider>
   );

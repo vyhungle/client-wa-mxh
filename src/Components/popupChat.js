@@ -36,11 +36,13 @@ function PopupChat(props) {
                                     </div>
                                     <div className="listchat__popup--input">
                                         <input
-                                            autocomplete="off"
+                                           
                                             id="displayname"
                                             name="displayname"
                                             placeholder="Search for people and groups"
-                                            onChange={formProps.handleChange}
+                                            onChange={
+                                                formProps.handleChange
+                                            }
                                             value={formProps.values.displayname}
                                         />
                                     </div>

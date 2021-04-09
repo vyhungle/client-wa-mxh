@@ -1,5 +1,6 @@
 .listchat{
     border-right:.75px solid gainsboro ;
+    padding-right: 15px;
     height:  88.5vh;
     
     .listchat__popup{
@@ -78,5 +79,22 @@
             
         }
     }
-    .listchat__member{}
+    .listchat__member{
+        .list-Chat{
+            .list-Chat__item{
+                >img{
+                    height: 60px;
+                    width: 60px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+                >p{
+                    margin-left:15px;
+                    font-size: 18px;
+                    font-weight: 450;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
 }

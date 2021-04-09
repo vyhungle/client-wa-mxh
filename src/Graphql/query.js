@@ -80,7 +80,19 @@ export const GET_USERS= gql `
   }
 }
 `
-
+export const GET_ROOM_CHAT= gql `
+query getRoomChat{
+  getRoomChat{
+    id
+    to{
+      username
+      displayname
+      profile{
+				avatar
+      }
+    }
+  }
+}`;
 
 
     

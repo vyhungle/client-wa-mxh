@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import PopupChat from "../Components/popupChat";
+import LoadListChat from "../Components/loadListChat";
 function ListChat() {
     const[popup,setPopup]=useState(false)
     function openPopup(){
@@ -25,7 +26,9 @@ function ListChat() {
                     placeholder="Search for people and groups"
                 />
             </div>
-            <div className="listchat__member"></div>
+            <div className="listchat__member">
+                <LoadListChat/>
+            </div>
         </div>
     )
 }

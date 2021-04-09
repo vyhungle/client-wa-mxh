@@ -7,13 +7,11 @@ import ListItem from '@material-ui/core/ListItem';
 import { GET_USERS } from "../Graphql/query";
 function LoadUser() {
     const { data: { getUsers: user } = {} } = useQuery(GET_USERS)
-    console.log(user)
     return (
         <List className="List-user">
             <h5>Who to follow</h5>
             {user && user.map((u) => (              
                 <ListItem key={u.id} >
-                {console.log(u)}
                     <div>
                         <div>
                             <img src={u.profile.avatar} alt="avatar"></img>
