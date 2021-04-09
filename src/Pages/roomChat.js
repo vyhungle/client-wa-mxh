@@ -6,7 +6,7 @@ import MenuTop from "../Components/menuTop";
 import ListChat from "../Components/listChat";
 import ContentChat from "../Components/contentChat";
 
-function RoomChat() {
+function RoomChat(props) {
     return (
         <div>
             <MenuTop />
@@ -19,7 +19,7 @@ function RoomChat() {
                               <ListChat/>
                           </Col>
                           <Col>
-                            <ContentChat/>
+                            <ContentChat id={props.match.params.id}/>
                           </Col>
                       </Row>
                     </Col>

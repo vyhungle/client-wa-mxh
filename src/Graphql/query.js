@@ -94,6 +94,19 @@ query getRoomChat{
   }
 }`;
 
+export const GET_CHAT= gql `
+query getChat($roomId:ID!){
+ getChat(roomId:$roomId){
+  content{
+    id
+    displayname
+    content
+    createdAt
+    username
+  }
+}
+}`;
+
 
     
    

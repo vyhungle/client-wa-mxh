@@ -17,7 +17,7 @@ function LoadListChat() {
                
                 <List className="list-Chat">
                     {room && room.map((r)=>(
-                        <Link to={`chat/${r.id}`} key={r.id}>
+                        <Link to={`/chat/${r.id}`} key={r.id}>
                             <ListItem  className="list-Chat__item">
                                 <img src={r.to.profile.avatar} art="avatar"/>
                                 <p>{r.to.displayname}</p>

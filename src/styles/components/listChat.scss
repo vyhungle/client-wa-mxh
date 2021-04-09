@@ -1,7 +1,7 @@
 .listchat{
     border-right:.75px solid gainsboro ;
     padding-right: 15px;
-    height:  88.5vh;
+    height:  85vh;
     
     .listchat__popup{
         border-radius: 20px;
@@ -83,8 +83,8 @@
         .list-Chat{
             .list-Chat__item{
                 >img{
-                    height: 60px;
-                    width: 60px;
+                    height: 50px;
+                    width: 50px;
                     object-fit: cover;
                     border-radius: 50%;
                 }

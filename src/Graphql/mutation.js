@@ -129,7 +129,6 @@ mutation createContentChat($roomId:String!, $content:String!) {
       createdAt
       content
     }
-    id
   }
 }`;
 
