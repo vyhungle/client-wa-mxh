@@ -5,7 +5,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from 'react-router-dom';
-import { AuthContext } from "../Context/auth";
+import { AuthContext } from "../../Context/auth";
 
 function MenuTop() {
     const {user,logout}=useContext(AuthContext);

@@ -4,8 +4,8 @@ import { Formik, Form } from "formik";
 import { useMutation } from "@apollo/react-hooks";
 import List from '@material-ui/core/List';
 
-import { FIND_USERS } from "../Graphql/mutation";
-import SingleUser from "../Components/singleUser";
+import { FIND_USERS } from "../../Graphql/mutation";
+import SingleUser from "./singleUser";
 
 function PopupChat(props) {
     const [findUsers, { data: { findUsers: u } = {}, loading }] = useMutation(FIND_USERS);

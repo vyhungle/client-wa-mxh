@@ -3,7 +3,7 @@ import { Formik,Form } from "formik";
 import { useMutation } from "@apollo/react-hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import { CREATE_POST } from "../Graphql/mutation";
+import { CREATE_POST } from "../../Graphql/mutation";
 
 
 function FormPost() {

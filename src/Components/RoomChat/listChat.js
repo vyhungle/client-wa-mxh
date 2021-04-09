@@ -1,8 +1,8 @@
 import React,{useState} from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import PopupChat from "../Components/popupChat";
-import LoadListChat from "../Components/loadListChat";
+import PopupChat from "./popupChat";
+import LoadListChat from "./loadListChat";
 function ListChat() {
     const[popup,setPopup]=useState(false)
     function openPopup(){

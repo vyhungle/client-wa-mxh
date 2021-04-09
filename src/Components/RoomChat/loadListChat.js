@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/react-hooks";
 import {ListItem,List} from '@material-ui/core';
 import { Link } from "react-router-dom";
 
-import { GET_ROOM_CHAT } from "../Graphql/query";
+import { GET_ROOM_CHAT } from "../../Graphql/query";
 
 
 

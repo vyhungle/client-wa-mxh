@@ -2,7 +2,7 @@ import React from 'react'
 import { useFormik } from 'formik';
 import { useMutation } from "@apollo/react-hooks";
 
-import { CREATE_COMMENT } from "../Graphql/mutation";
+import { CREATE_COMMENT } from "../../Graphql/mutation";
 
 function FormComment({id}) {
     const [comment]=useMutation(CREATE_COMMENT)

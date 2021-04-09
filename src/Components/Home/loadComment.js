@@ -1,7 +1,7 @@
 import React from 'react'
 import { useQuery } from "@apollo/react-hooks";
 
-import { GET_COMMENT } from "../Graphql/query";
+import { GET_COMMENT } from "../../Graphql/query";
 function LoadComment({id}) {
 
     const{data:{getPost:post}={}}=useQuery(GET_COMMENT,{

@@ -1,8 +1,8 @@
 import React,{useContext} from 'react'
 import {useQuery} from "@apollo/react-hooks"
 
-import {GET_CHAT} from "../Graphql/query"
-import { AuthContext } from "../Context/auth";
+import {GET_CHAT} from "../../Graphql/query"
+import { AuthContext } from "../../Context/auth";
 
 function ContentChat({id}) {
     const context=useContext(AuthContext)

@@ -1,10 +1,10 @@
 import React from 'react'
 import { Row, Col, Container } from "react-bootstrap";
 
-import MenuLeft from "../Components/navLeft";
-import MenuTop from "../Components/menuTop";
-import ListChat from "../Components/listChat";
-import ContentChat from "../Components/contentChat";
+import MenuLeft from "../Components/Menu/navLeft";
+import MenuTop from "../Components/Menu/menuTop";
+import ListChat from "../Components/RoomChat/listChat";
+import ContentChat from "../Components/RoomChat/contentChat";
 
 function RoomChat(props) {
     return (

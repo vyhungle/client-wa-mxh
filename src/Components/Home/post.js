@@ -4,10 +4,10 @@ import moment from "moment";
 import { useMutation } from "@apollo/react-hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import FormComment from "../Components/formComment";
-import LoadComment from "../Components/loadComment";
-import { AuthContext } from "../Context/auth";
-import { LIKEPOST } from "../Graphql/mutation";
+import FormComment from "./formComment";
+import LoadComment from "./loadComment";
+import { AuthContext } from "../../Context/auth";
+import { LIKEPOST } from "../../Graphql/mutation";
 
 function Post({ post: {
     id,

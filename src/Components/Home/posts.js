@@ -1,11 +1,11 @@
 import React from 'react'
 import { useQuery } from "@apollo/react-hooks";
-import { GET_POSTS } from "../Graphql/query";
-import Post from '../Components/post'
+import { GET_POSTS } from "../../Graphql/query";
+import Post from './post'
 import { Scrollbars } from 'rc-scrollbars';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import FormPost from "../Components/formPost";
+import FormPost from "./formPost";
 
 
 

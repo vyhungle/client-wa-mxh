@@ -2,7 +2,7 @@ import React from 'react'
 import { useMutation } from "@apollo/react-hooks";
 import ListItem from '@material-ui/core/ListItem';
 
-import { CREATE_ROOM_CHAT} from "../Graphql/mutation"
+import { CREATE_ROOM_CHAT} from "../../Graphql/mutation"
 
 function SingleUser({user:{id,displayname,profile}}) {
     
