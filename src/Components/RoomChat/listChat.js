@@ -22,9 +22,9 @@ function ListChat() {
                 
             </div>
             <div className="listchat__form">
-                <input
+                {/* <input
                     placeholder="Search for people and groups"
-                />
+                /> */}
             </div>
             <div className="listchat__member">
                 <LoadListChat/>

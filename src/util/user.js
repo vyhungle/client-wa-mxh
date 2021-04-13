@@ -1,14 +1,13 @@
-import { useQuery } from "@apollo/react-hooks";
-import { GET_USER } from "../Graphql/query";
+import React from 'react'
 
-const user=null
-function getUser(){
-    const {data:{getUser:u}}=useQuery(GET_USER);
-    user=u
+function User() {
+    return (
+        ""
+    )
 }
-getUser();
 
-export default user;
+export default User
+
 
 
 

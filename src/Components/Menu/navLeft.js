@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom';
 
 
 export default function navLeft() {
-
-
   return (
     <div>
       <Row>
@@ -18,7 +16,7 @@ export default function navLeft() {
         </Col>
         <Col xs={10} className="menu">
         <List className="menu__listIcon">
-           <Link to="/">
+           <Link to="/" className="link">
            <ListItem  button>
               <FontAwesomeIcon icon="home"/>
               <span>Home</span>
@@ -32,7 +30,7 @@ export default function navLeft() {
             <FontAwesomeIcon icon="bell"/>
             <span>Notifications</span>
             </ListItem>
-            <Link to="/chat">
+            <Link to="/chat" className="link">
             <ListItem button   to="/chat">
             <FontAwesomeIcon icon="comment-dots"/>
             <span>Messages</span>

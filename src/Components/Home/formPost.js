@@ -55,7 +55,6 @@ function FormPost() {
                         type='textarea'
                         placeholder="How are you to day?"
                         onChange={formProps.handleChange}
-                        onSubmit={formProps.values.body}
                     />
                 </div>
 
@@ -72,7 +71,6 @@ function FormPost() {
                             onChange={(e)=> {
                                 uploadImage(e.target.files,formProps);
                             }}
-                            onSubmit={formProps.values.image}
                         />
                     <button type="submit">submit</button>
                 </div>
