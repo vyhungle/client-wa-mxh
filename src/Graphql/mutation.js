@@ -15,6 +15,10 @@ mutation login($username:String!,$password:String!){
             token
             username
             createdAt
+            profile{
+              avatar
+              fullName
+          }
         }
     }
 }`;
@@ -74,6 +78,10 @@ mutation register(
     username
     createdAt
     displayname
+    profile{
+              avatar
+              fullName
+          }
     }
   }
 }

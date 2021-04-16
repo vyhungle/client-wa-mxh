@@ -3,6 +3,8 @@
     border: .75px solid gainsboro;
     border-radius: 20px;
     margin-left: 4%;
+    position: fixed;
+    width: 300px;
  
    .menu__listIcon{
     width: 100%;
@@ -12,6 +14,7 @@
     justify-content: center;
     letter-spacing: 1px;
     .MuiButtonBase-root{
+        color: #a4acb8;
         >span{
             margin-left: 15px;
             padding-bottom: 2px;          

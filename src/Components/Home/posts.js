@@ -2,10 +2,11 @@ import React from 'react'
 import { useQuery } from "@apollo/react-hooks";
 import { GET_POSTS } from "../../Graphql/query";
 import Post from './post'
-import { Scrollbars } from 'rc-scrollbars';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-import FormPost from "./formPost";
+
+import PostView from "./postView";
+
 
 
 
@@ -14,23 +15,26 @@ function Posts() {
         variables:{
             limit:10,
         },
-        pollInterval:500
+        pollInterval:50
         
     })
-    return (    
-      <Scrollbars style={{height:"100vh"}} autoHide >   
-            <FormPost/>  
+ 
+    return (  
+    <div>
+        <PostView/>  
             {loading ? (
                 <CircularProgress color="primary" />
             ):(
                 <>
-                {posts.posts&&
+                {posts &&
                 posts.posts.map((post)=>(
                     <Post post={post} key={post.id}/>
                 ))}
                 </>
             )}
-       </Scrollbars>
+     
+    </div>  
+     
     )
 }
 

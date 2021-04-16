@@ -5,12 +5,12 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+
 import { AuthContext } from "../../Context/auth";
 
 function MenuTop() {
     const {user,logout}=useContext(AuthContext);
     const [anchorEl, setAnchorEl] = useState(null);
-  
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
@@ -29,7 +29,7 @@ function MenuTop() {
           </Col>
           <Col xs={3} className="menu-header__right">
             <div aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-              <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" alt="avatar" />
+              <img src="" alt="avatar" />
             </div>
             
             <Menu

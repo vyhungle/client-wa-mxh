@@ -1,0 +1,24 @@
+.post-view{
+    display: flex;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border: .75px solid gainsboro;
+    border-radius: 20px;
+  margin-bottom: 15px;
+    >p{
+    height: 10px;
+    }
+    >button{
+        position: absolute;
+        height: 30px;
+        right: 0;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        border: none;
+        margin-right: 20px;
+        color: #C9CDD3;
+        &:hover{
+            background-color: #f3f3f3;
+        }
+    }
+}

@@ -20,6 +20,7 @@ function Post({ post: {
     commentCount,
     avatar
 } }) {
+   
     const user = useContext(AuthContext);
     const [open, setOpen] = useState(false);
 
@@ -42,7 +43,8 @@ function Post({ post: {
     return (
         <div className='card'>
             <div className='card__title'>
-                <img src={avatar} alt="avatar" />
+                {avatar === null ? (<img src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" alt="avatar" />):(<img src={avatar} alt="avatar" />)}
+               
                 <div className='card__title--conteint'>
                     <span>{displayname}</span>
                     <p>{moment(createdAt).fromNow(true)}</p>
@@ -53,9 +55,11 @@ function Post({ post: {
 
             </div>
             <div className='card__body'>{body}</div>
-            <div className='card__image'>
+
+            {image==="" ? (""):(  <div className='card__image'>
                 <img src={image} alt="imagepost" />
-            </div>
+            </div>)}
+          
             <div className='card__bottom'>
                 {liked ? (
                     <IconButton className='card__bottom--button-liked' onClick={likePost}>
@@ -70,8 +74,8 @@ function Post({ post: {
                 )}
 
 
-                <IconButton className="card__bottom--button">
-                    <FontAwesomeIcon icon='comments' onClick={openComment} />
+                <IconButton className="card__bottom--button"  onClick={openComment}>
+                    <FontAwesomeIcon icon='comments'/>
                     <p style={{ paddingLeft: "5px" }}>{commentCount}</p>
                 </IconButton>
 

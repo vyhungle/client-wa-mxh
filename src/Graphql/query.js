@@ -97,15 +97,7 @@ query getRoomChat{
 export const GET_CHAT= gql `
 query getChat($roomId:ID!){
  getChat(roomId:$roomId){
-   id
-  to{
-    username
-    displayname
-  }
-  from{
-    username
-    displayname
-  }
+  id
   content{
     id
     displayname
@@ -114,6 +106,17 @@ query getChat($roomId:ID!){
     username
   }
 }
+}`;
+
+export const GET_MY_USER= gql `
+query getMyUser{
+  getMyUser{
+    username
+    displayname
+    profile{
+      avatar
+    }
+  }
 }`;
 
 

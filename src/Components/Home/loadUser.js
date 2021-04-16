@@ -14,7 +14,10 @@ function LoadUser() {
                 <ListItem key={u.id} >
                     <div>
                         <div>
-                            <img src={u.profile.avatar} alt="avatar"></img>
+                            {u.profile.avatar===null ? (
+                                <img src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" alt="avatar"></img>
+                            ):( <img src={u.profile.avatar} alt="avatar"></img>)}
+                           
                         </div>
                     </div>
                     <p>{u.displayname}</p>

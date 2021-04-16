@@ -1,0 +1,39 @@
+.popup-post{
+  background:rgba(0,0,0,.7);
+  position: absolute;
+  z-index: 1000;
+  width: 200%;
+  height: 100%;
+  top: -100px;
+  left: -380px;
+  .popup-post__box{
+    background-color: #FFFFFF;
+    width: 700px;
+    height: 400px;
+    position: fixed;
+    top: 100px;
+    left: 410px;
+    border-radius: 20px;
+    padding: 40px;
+    
+    .popup-post__box--icon{
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      font-size: 18px;
+    }
+      .popup-post__box--input{
+        >textarea{
+         
+          width: 615px;
+          border: solid .75px gainsboro;
+          border-radius: 15px;
+          outline: none;
+          padding: 15px;
+
+        }
+      }
+    
+  }
+  
+}
