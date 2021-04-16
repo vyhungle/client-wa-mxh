@@ -15,6 +15,7 @@ mutation login($username:String!,$password:String!){
             token
             username
             createdAt
+            displayname
             profile{
               avatar
               fullName
@@ -115,8 +116,12 @@ export const CREATE_ROOM_CHAT= gql `
 mutation createRoomChat($userId:String!){
   createRoomChat(userId:$userId){
     id
-    from
-    to
+    from{ 
+      username
+    }
+    to{
+      username
+    }
     content{
       id
       username

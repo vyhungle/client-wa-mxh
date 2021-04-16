@@ -5,8 +5,10 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import { useQuery } from "@apollo/react-hooks";
 
 import { AuthContext } from "../../Context/auth";
+import { GET_MY_USER } from "../../Graphql/query";
 
 function MenuTop() {
     const {user,logout}=useContext(AuthContext);
@@ -14,11 +16,12 @@ function MenuTop() {
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
-  
+    console.log(user)
     const handleClose = () => {
       setAnchorEl(null);
     };
-  
+    const {data:{getMyUser:u}={}}=useQuery(GET_MY_USER)
+
     return (
         <Container fluid className="menu-header">
         <Row>
@@ -29,7 +32,12 @@ function MenuTop() {
           </Col>
           <Col xs={3} className="menu-header__right">
             <div aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-              <img src="" alt="avatar" />
+            {u ?(
+              <img src={u.profile.avatar} alt="avatar" />
+            ):(
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI7M4Z0v1HP2Z9tZmfQaZFCuspezuoxter_A&usqp=CAU" alt="avatar" />
+            )}
+              
             </div>
             
             <Menu

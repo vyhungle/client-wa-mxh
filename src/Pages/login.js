@@ -19,7 +19,7 @@ const SignupForm = (props) => {
         onSubmit: values => {
             Login({
                 variables: values,
-                update(proxy, { data: { login: userData } }) {
+                update(proxy, { data: { login: userData }={} }) {
                     errors = {}
                     if (userData.error) {
                         for (var i = 0; i < userData.error.length; i++) {

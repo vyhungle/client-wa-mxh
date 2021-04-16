@@ -37,50 +37,56 @@ function PopupPost(props) {
         }}
       >
         {(formProps) => (
-            <>
-         {props.trigger===false ? (""):(
-            <div className="popup-post">
-            <div className="popup-post__box">
-              <FontAwesomeIcon icon="times" className="popup-post__box--icon" onClick={() => props.setTrigger(false)}/>
-            
-              <Form>
-                <div className="popup-post__box--input">
-                  <textarea
-                    id="body"
-                    name="body"
-                    type="textarea"
-                    placeholder="How are you to day?"
-                    onChange={formProps.handleChange}
+          <>
+            {props.trigger === false ? (
+              ""
+            ) : (
+              <div className="popup-post">
+                <div className="popup-post__box">
+                  <FontAwesomeIcon
+                    icon="times"
+                    className="popup-post__box--icon"
+                    onClick={() => props.setTrigger(false)}
                   />
-                </div>
 
-                <div className="popup-post__submit">
-                  <div className="popup-post__submit--box">
-                    <div>
+                  <Form>
+                    <div className="popup-post__box--input">
+                      <textarea
+                        id="body"
+                        name="body"
+                        type="textarea"
+                        placeholder="How are you to day?"
+                        onChange={formProps.handleChange}
+                      />
                       <label htmlFor="image">
-                        {" "}
-                        <FontAwesomeIcon icon="images" />
-                      </label>
+                          {" "}
+                          <FontAwesomeIcon icon="images" />
+                        </label>
                     </div>
 
-                    <input
-                      id="image"
-                      name="image"
-                      type="file"
-                      onChange={(e) => {
-                        uploadImage(e.target.files, formProps);
-                      }}
-                    />
-                    <button type="submit" >submit</button>
-                  </div>
+                    <div className="popup-post__box--submit">
+                    {base64Image && (<img src={base64Image} alt="imagepost"/>)}
+                          
+                          
+                      <div>
+                       
+                        <input
+                          id="image"
+                          name="image"
+                          type="file"
+                          onChange={(e) => {
+                            uploadImage(e.target.files, formProps);
+                          }}
+                        />                    
+                        <button type="submit">submit</button>
+                      </div>
+                    </div>
+                  </Form>
                 </div>
-              </Form>
-            </div>
-          </div>
-         )}
-         </>
+              </div>
+            )}
+          </>
         )}
-      
       </Formik>
     </div>
   );
