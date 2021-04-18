@@ -145,6 +145,13 @@ mutation createContentChat($roomId:String!, $content:String!) {
   }
 }`;
 
+export const FOLLOWING =gql `
+mutation following($username:String!){
+  following(username:$username){
+    id
+  }
+}`;
+
     
    
   

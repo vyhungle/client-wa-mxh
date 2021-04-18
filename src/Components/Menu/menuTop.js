@@ -16,7 +16,6 @@ function MenuTop() {
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
-    console.log(user)
     const handleClose = () => {
       setAnchorEl(null);
     };

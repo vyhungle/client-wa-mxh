@@ -72,11 +72,31 @@ export const GET_USERS= gql `
   getUsers{
     id
     email
+    username
     displayname
     profile{
       avatar
     }
-    
+    following{
+      username
+    }
+  }
+}
+`
+
+export const GET_USERS_FOLLOWING= gql `
+  query getUserFollowing {
+    getUserFollowing{
+    id
+    email
+    username
+    displayname
+    profile{
+      avatar
+    }
+    following{
+      username
+    }
   }
 }
 `
@@ -115,6 +135,12 @@ query getMyUser{
     displayname
     profile{
       avatar
+    }
+    following{
+      id
+      displayname
+      avatar
+      username
     }
   }
 }`;

@@ -1,12 +1,24 @@
-import React from 'react'
-import { useQuery } from "@apollo/react-hooks";
+import React,{useContext} from 'react'
+import { useQuery,useMutation } from "@apollo/react-hooks";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 
-
-import { GET_USERS } from "../../Graphql/query";
+import { FOLLOWING } from "../../Graphql/mutation";
+import { GET_USERS_FOLLOWING } from "../../Graphql/query";
+import { AuthContext } from "../../Context/auth";
 function LoadUser() {
-    const { data: { getUsers: user } = {} } = useQuery(GET_USERS)
+    const context=useContext(AuthContext);
+    const { data: { getUserFollowing: user } = {} } = useQuery(GET_USERS_FOLLOWING,{pollInterval:500})
+    const [followings]=useMutation(FOLLOWING);
+    function setFollowing(e){
+        followings({
+            variables:{
+                username:e
+            },
+            
+        })
+    }
+
     return (
         <List className="List-user">
             <h5>Who to follow</h5>
@@ -20,8 +32,8 @@ function LoadUser() {
                            
                         </div>
                     </div>
-                    <p>{u.displayname}</p>
-                    <button>Follow</button>
+                    <p>{u.displayname}</p>                     
+                    <button onClick={()=>setFollowing(u.username)}>Follow</button>
                     
                 </ListItem>
             ))}
