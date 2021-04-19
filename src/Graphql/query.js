@@ -152,6 +152,20 @@ query getMyUser{
   }
 }`;
 
+export const GET_NOTIFICATIONS=gql `
+query getNotification{
+  getNotification{
+    count
+    notifications{
+      id
+      displayname
+      title
+      avatar
+      username
+    }
+  }
+}`;
+
 
     
    

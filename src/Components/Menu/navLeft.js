@@ -27,8 +27,8 @@ export default function navLeft() {
             <span>Articles</span>
             </ListItem>
             <ListItem button>
-            <FontAwesomeIcon icon="bell"/>
-            <span>Notifications</span>
+            <FontAwesomeIcon icon="store"/>
+            <span>Marke</span>
             </ListItem>
             <Link to="/chat" className="link">
             <ListItem button   to="/chat">

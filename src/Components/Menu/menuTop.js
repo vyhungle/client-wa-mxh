@@ -7,6 +7,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { useQuery } from "@apollo/react-hooks";
 
+import Notification from "../Notification/notification";
 import { AuthContext } from "../../Context/auth";
 import { GET_MY_USER } from "../../Graphql/query";
 
@@ -30,7 +31,9 @@ function MenuTop() {
             <InputBase placeholder='Search...' />
           </Col>
           <Col xs={3} className="menu-header__right">
-            <div aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+       
+            <Notification/>      
+            <div aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} className="menu-header__right--avatar">
             {u ?(
               <img src={u.profile.avatar} alt="avatar" />
             ):(

@@ -27,8 +27,34 @@
         
     }
     .menu-header__right{
-       
-        >div{
+        .menu-header__right--icon{
+            position: absolute;
+            display: flex;
+            top: 10px;
+            left: 270px;
+          >div{
+              background-color:crimson;
+              width: 15px;
+              height: 15px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              color: gainsboro;
+              >span{
+                  font-size: 10px;
+              }
+
+          }
+            .fa-bell{
+                font-size: 25px;
+                color:#a4acb8;
+                
+            }
+           
+        }
+        
+        >.menu-header__right--avatar{
             float: right;
             background-color: brown;
             border-radius: 50%;
@@ -42,6 +68,7 @@
                 overflow:hidden ;
             }
         }
+       
     }
     
     
@@ -58,8 +85,47 @@
        
     }
     .layout__right{
-        /* position: fixed;
-        right: 0;
-        width: 500px; */
+       
     }
 }
+
+ .menu-header__right--notification{
+    margin-top: 52px;
+    margin-left: 0px;
+  
+    .menu-header__right--notification--content{
+        overflow-y: scroll;
+        width: 400px;
+        max-height: 625px;
+        padding: 10px;
+        outline: none;
+     
+        >div{        
+            display: flex;
+            margin-bottom: 10px;
+            
+            >img{
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                object-fit: cover;
+                overflow: hidden;
+            }
+            >div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-left: 10px;
+                margin: 0;
+                >p{
+                    >span{
+                        font-weight: 700;
+                    }
+                    margin-bottom: 0;
+                    max-width: 320px;
+                }
+            }
+        }
+    }
+
+ }
