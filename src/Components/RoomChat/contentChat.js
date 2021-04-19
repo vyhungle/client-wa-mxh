@@ -15,14 +15,19 @@ function ContentChat({id}) {
     const context=useContext(AuthContext)
     context.user===null ?  username="" : username=context.user.username;  
     const {data:{getChat:chat}={}}=useQuery(GET_CHAT,{variables:{roomId:id},pollInterval:1000})
+    console.log(chat)
+    
+ 
     return (
         <div className="content-chat">
             <div className="content-chat__header">
-                <h5>a</h5>
+            {chat &&(<>
+            <h5>{chat.from.displayname}</h5>  
+           </>)}
+             
+              
             </div>
-           
-          <Scrollbars style={{height:"525px" ,width:"100%", marginTop:"35px", position:"absolute"}} autoHide >
-            <div className="content-chat__body">
+            <div className="content-chat__body  d-flex flex-column-reverse"  >
                    {chat && chat.content.map((Chat)=>(
                     username===Chat.username?(
                         <div key={Chat.id} className="content-chat__body--me">
@@ -36,7 +41,7 @@ function ContentChat({id}) {
                        
                    ))}
             </div>
-            </Scrollbars>
+        
            
             <div className="content-chat__form">
                <FormChat id={id}/>

@@ -12,14 +12,13 @@ function ListChat() {
    
     return (
         <div className="listchat">
-        {popup===true?(
-                <PopupChat trigger={popup} setTrigger={setPopup}/>
-        ):(
-            ""
-        )}
-            <div className="listchat__top">
-                <h5>Messages</h5>
-                <FontAwesomeIcon icon='plus'onClick={openPopup} className="listchat__top--icon"/>
+            <div className="listchat__top">        
+               <div>
+                    <span>  <FontAwesomeIcon icon='search'/></span>                 
+                   <input 
+                       placeholder="Search..."
+                   />
+               </div>
                 
             </div>
             <div className="listchat__form">

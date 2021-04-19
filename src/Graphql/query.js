@@ -118,6 +118,13 @@ export const GET_CHAT= gql `
 query getChat($roomId:ID!){
  getChat(roomId:$roomId){
   id
+  from{
+      username
+      displayname
+      profile{
+				avatar
+      }
+      }
   content{
     id
     displayname

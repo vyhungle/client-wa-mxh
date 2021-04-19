@@ -5,19 +5,37 @@
 
     }
     .layout-chat__content{
-        height: 85vh;
+        height:615px;
         border-radius: 20px;
         background: #FFFFFF;
         border:solid .75px gainsboro;
+        position: fixed;
+        width: 1070px;
+        left: 385px;
+        padding: 0;
+        display: flex;
+        .layout-chat__content--left{        
+            width: 30%;
+            >div{
+             
+               
+            }
+        }
+        .layout-chat__content--right{
+        
+            left: 30%;
+           
+            width: 70%;
+        }
         
     }
     .content-chat__form{
         position: absolute;
-        bottom: 10px;
-        left: -10px;
+        bottom: 5px;
+        left: 330px;
         >form{
             >input{
-                width: 620px;
+                width: 670px;
                 border: solid .75px gainsboro;
                 height: 35px;
                 border-radius: 20px;

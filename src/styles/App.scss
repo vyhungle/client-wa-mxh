@@ -24,10 +24,12 @@
 
 body{
   background-color: #F7F7FA;
- /*  width: 90%;
-  margin-left: 5%; */
-/*   overflow-y: hidden; */
   overflow-x: hidden;
+
+}
+::-webkit-scrollbar {
+  display: none;
+
 }
 html {
   overscroll-behavior: none;

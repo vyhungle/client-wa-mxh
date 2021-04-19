@@ -15,7 +15,7 @@ function Posts() {
         variables:{
             limit:10,
         },
-        pollInterval:50
+        pollInterval:500
         
     })
  
