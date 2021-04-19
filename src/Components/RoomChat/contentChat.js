@@ -6,7 +6,6 @@ import {useQuery} from "@apollo/react-hooks"
 import {GET_CHAT} from "../../Graphql/query"
 import { AuthContext } from "../../Context/auth";
 import FormChat from "./formChat";
-import {Scrollbars} from 'react-custom-scrollbars';
 
 
 function ContentChat({id}) {
@@ -22,8 +21,9 @@ function ContentChat({id}) {
         <div className="content-chat">
             <div className="content-chat__header">
             {chat &&(<>
-            <h5>{chat.from.displayname}</h5>  
-           </>)}
+            {chat.members[0].username!==username?(  <h5>{chat.members[0].displayname}</h5> ):(<h5>{chat.members[1].displayname}</h5>)}
+           </>
+          )}
              
               
             </div>
