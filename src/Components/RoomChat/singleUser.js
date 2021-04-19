@@ -18,7 +18,9 @@ function SingleUser({user:{id,displayname,profile}}) {
                 <ListItem>
                     <div>
                         <div>
-                            <img src={profile.avatar} alt="avatar"></img>
+                        {profile.avatar===null?(<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI7M4Z0v1HP2Z9tZmfQaZFCuspezuoxter_A&usqp=CAU" alt="avatar"></img>):
+                        (<img src={profile.avatar} alt="avatar"></img>)}
+                            
                         </div>
                     </div>
                     <p>{displayname}</p>

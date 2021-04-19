@@ -10,7 +10,7 @@ import {  AuthContext} from "../../Context/auth";
 
 
 function LoadListChat() {
-    const {loading,data:{getRoomChat:room}={}}=useQuery(GET_ROOM_CHAT)
+    const {loading,data:{getRoomChat:room}={}}=useQuery(GET_ROOM_CHAT,{pollInterval:400})
     const user=useContext(AuthContext)
   
     return (
@@ -25,12 +25,14 @@ function LoadListChat() {
                             <ListItem  className="list-Chat__item">
                             {r.members[0].username!==user.user.username ?(
                                 <>
-                               <img src={r.members[0].profile.avatar} art="avatar"/>
+                                {r.members[0].profile.avatar===null?(<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI7M4Z0v1HP2Z9tZmfQaZFCuspezuoxter_A&usqp=CAU" alt="avatar"></img>):
+                                (<img src={r.members[0].profile.avatar} art="avatar"/>)}
                                <p>{r.members[0].displayname}</p>
                                </>
                             ):(
                                 <>
-                                <img src={r.members[1].profile.avatar} art="avatar"/>
+                                {r.members[1].profile.avatar===null?(<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI7M4Z0v1HP2Z9tZmfQaZFCuspezuoxter_A&usqp=CAU" alt="avatar"></img>):
+                                (<img src={r.members[1].profile.avatar} art="avatar"/>)}
                                 <p>{r.members[1].displayname}</p>
                                 </>
                             )}

@@ -116,12 +116,6 @@ export const CREATE_ROOM_CHAT= gql `
 mutation createRoomChat($userId:String!){
   createRoomChat(userId:$userId){
     id
-    from{ 
-      username
-    }
-    to{
-      username
-    }
     content{
       id
       username
