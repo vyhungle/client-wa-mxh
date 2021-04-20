@@ -12,7 +12,8 @@ import {  AuthContext} from "../../Context/auth";
 function LoadListChat() {
     const {loading,data:{getRoomChat:room}={}}=useQuery(GET_ROOM_CHAT,{pollInterval:400})
     const user=useContext(AuthContext)
-  
+    var username;
+    user.user===null ?  username="" : username=user.user.username;  
     return (
         <div>
             {loading ? (
@@ -23,7 +24,7 @@ function LoadListChat() {
                     {room && room.map((r)=>(
                         <Link to={`/chat/${r.id}`} key={r.id} className="link">
                             <ListItem  className="list-Chat__item">
-                            {r.members[0].username!==user.user.username ?(
+                            {r.members[0].username!==username ?(
                                 <>
                                 {r.members[0].profile.avatar===null?(<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI7M4Z0v1HP2Z9tZmfQaZFCuspezuoxter_A&usqp=CAU" alt="avatar"></img>):
                                 (<img src={r.members[0].profile.avatar} art="avatar"/>)}

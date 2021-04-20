@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Menu from "@material-ui/core/Menu";
 import { useQuery } from "@apollo/react-hooks";
+import moment from "moment";
 
 import { GET_NOTIFICATIONS } from "../../Graphql/query";
 
@@ -43,11 +44,14 @@ function Notification() {
         <div className="menu-header__right--notification--content">
           <h5>NOTIFICATION</h5>
             {ntf && ntf.notifications.map((n) => (
-                <div key={ntf.id}>
+                <div key={n.id}>
                   <img src={n.avatar}></img>
                   <div>
-                    <p><span>{n.displayname}</span> {n.title}</p>
-                    
+                  <div>
+                  <p><span>{n.displayname}</span> {n.title}</p>    
+                    <p>{moment(n.createdAt).fromNow(true)}</p>    
+                  </div>
+                           
                   </div>
                 </div>
               ))}

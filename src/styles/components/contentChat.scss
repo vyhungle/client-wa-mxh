@@ -23,8 +23,13 @@
             margin-top: 35px;
             
             .content-chat__body--me{   
-                         
-                >p{
+                .time{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .content{
+                       
                     max-width: 350px;   
                     padding: 5px;
                     padding-left: 10px;
@@ -48,24 +53,32 @@
                 
             }
             .content-chat__body--you{
-                >p{
-                max-width: 350px;  
-                min-width: 70px; 
-                padding: 5px;
-                padding-left: 10px;
-                padding-right: 10px;
-                margin: 5px;
-                margin-bottom: 0;
-                margin-top: 5px;
-                background-color: #E4E6EB;
-                border-radius: 15px;
-                height: auto;
-                display: inline-block;
-                width: auto;
-                word-wrap: break-word;     
-                white-space: -moz-pre-wrap;
-                white-space: pre-wrap;      
+                .time{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
+                .content{
+                       
+                    max-width: 350px;  
+                    min-width: 70px; 
+                    padding: 5px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    margin: 5px;
+                    margin-bottom: 0;
+                    margin-top: 5px;
+                    background-color: #E4E6EB;
+                    border-radius: 15px;
+                    height: auto;
+                    display: inline-block;
+                    width: auto;
+                    word-wrap: break-word;     
+                    white-space: -moz-pre-wrap;
+                    white-space: pre-wrap;  
+                                   
+                }
+                
                 
             }
             

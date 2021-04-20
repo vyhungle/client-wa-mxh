@@ -162,6 +162,7 @@ query getNotification{
       title
       avatar
       username
+      createdAt
     }
   }
 }`;
