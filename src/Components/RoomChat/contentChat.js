@@ -39,7 +39,7 @@ function ContentChat({ id }) {
                     {Date.parse(chat.content[index - 1].createdAt) -
                       Date.parse(Chat.createdAt) >
                     800000 ? (
-                      <p className="time">{moment(Chat.createdAt).fromNow()}</p>
+                      <p className="time">{moment(Chat.createdAt).subtract(1, 'days').calendar()}</p>
                     ) : (
                       ""
                     )}
@@ -56,7 +56,7 @@ function ContentChat({ id }) {
                     {Date.parse(chat.content[index - 1].createdAt) -
                       Date.parse(Chat.createdAt) >
                     800000 ? (
-                      <p className="time">{moment(Chat.createdAt).fromNow()}</p>
+                      <p className="time">{moment(Chat.createdAt).subtract(1, 'days').calendar()}</p>
                     ) : (
                       ""
                     )}

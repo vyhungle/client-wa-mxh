@@ -37,7 +37,7 @@ function MenuTop() {
             {u ?(
               <img src={u.profile.avatar} alt="avatar" />
             ):(
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI7M4Z0v1HP2Z9tZmfQaZFCuspezuoxter_A&usqp=CAU" alt="avatar" />
+              <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png" alt="avatar" />
             )}
               
             </div>

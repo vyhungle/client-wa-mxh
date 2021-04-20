@@ -27,6 +27,33 @@ export const GET_POSTS=gql`
     }
 }`;
 
+export const GET_MY_POSTS= gql `
+query getMyPosts($limit:Int!){
+      getMyPosts(limit:$limit) {
+        posts{
+            id
+            body
+            createdAt
+            displayname
+            image
+            avatar
+            comments{
+            id
+            createdAt
+            username
+            body
+            }
+            likes{
+            id
+            createdAt
+            username
+            }
+            likeCount
+            commentCount
+      }
+    }
+}`;
+
 export const GET_COMMENT=gql`
   query getPost($postId:ID!){
   getPost(postId:$postId){
@@ -83,6 +110,26 @@ export const GET_USERS= gql `
   }
 }
 `
+export const GET_USER_PROFILE =gql `
+query getUserProfile($username:String!){
+  getUser(username:$username){
+    username
+    displayname
+    profile{
+      coverImage
+      dateOfBirth
+      story
+      avatar
+    }
+    following{
+      id
+    }
+    follower{
+      id
+    }
+  }
+}`;
+
 
 export const GET_USERS_FOLLOWING= gql `
   query getUserFollowing {
