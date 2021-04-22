@@ -162,20 +162,7 @@ mutation createProduct($image:String!,$price:String!,$address:String!,$body:Stri
     }
     product{
       id
-      price
-      body
-      address
-      createdAt
-      image
-      category
-      seller{
-        id
-        username
-        displayname
-        profile{
-          avatar
-        }
-      }
+    
     }
   }
 }`;

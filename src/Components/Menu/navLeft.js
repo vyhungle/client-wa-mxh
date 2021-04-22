@@ -35,7 +35,7 @@ function NavLeft() {
             <Link to="/product" className="link">
             <ListItem button>
               <FontAwesomeIcon icon="store" />
-              <span>Marke</span>
+              <span>Market</span>
             </ListItem>
             </Link>
             <Link to="/chat" className="link">

@@ -7,6 +7,8 @@ import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 import { CREATE_PRODUCT } from "../../Graphql/mutation";
+
+var errors = {}
 function PopupAddProduct() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -55,15 +57,38 @@ function PopupAddProduct() {
               body: "",
               category: "Xe cộ",
             }}
-            onSubmit={(values) => {
-              console.log(values);
+            onSubmit={(values) => {          
               createProduct({
-                  variables:values
+                  variables:values,
+                  update(proxy, { data: { createProduct: product } = {} }) {
+                    errors = {}
+                    if (product.error) {
+                        for (var i = 0; i < product.error.length; i++) {
+                            if (product.error[i].field === "image") {
+                                errors.image = product.error[i].message
+                            }
+                            else if(product.error[i].field === "price") {
+                                errors.price = product.error[i].message
+                            }
+                            else if(product.error[i].field === "address") {
+                                errors.address = product.error[i].message
+                            }
+                            else if(product.error[i].field === "body") {
+                                errors.body = product.error[i].message
+                            }
+                            else errors.category = product.error[i].message
+                        }
+                    }               
+                },
               })
+
             }}
           >
             {(formProps) => (
               <Form>
+                {errors.body&&(
+                  <p>{errors.body}</p>
+                )}
                 <input
                   id="body"
                   type="text"
@@ -71,6 +96,7 @@ function PopupAddProduct() {
                   onChange={formProps.handleChange}
                   placeholder="Tên sản phẩm"
                 />
+                
                 <input
                   id="image"
                   type="file"                 
@@ -80,6 +106,9 @@ function PopupAddProduct() {
                   style={{ display: "none" }}
                 
                 />
+                {errors.image&&(
+                  <p>{errors.image}</p>
+                )}
                 <div className="popup-product__box--image">
                 {Image?(<img src={Image} alt="img product"/>):(
                       ""
@@ -190,6 +219,9 @@ function PopupAddProduct() {
                   <option value="Đồ may mặc">Đồ may mặc</option>
                   <option value="Đồ điện tử">Đồ điện tử</option>
                 </select>
+                {errors.price&&(
+                  <p>{errors.price}</p>
+                )}
                 <input
                   id="price"
                   type="text"
@@ -197,7 +229,7 @@ function PopupAddProduct() {
                   onChange={formProps.handleChange}
                   placeholder="Giá"
                 />
-                {loading ?(<Button ><CircularProgress color="primary" /></Button>):(<Button type="submit"  onClick={handleClose}>Create Product</Button>)}
+                {loading ?(<Button ><CircularProgress color="primary" /></Button>):(<Button type="submit">Create Product</Button>)}
                 
               </Form>
             )}

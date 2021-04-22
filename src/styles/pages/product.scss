@@ -64,11 +64,14 @@
     .popup-product__box{
         outline: none;
         width: 700px;
-        height: 400px;
+        min-height: 400px;
         padding: 20px;
       
        >form{
         display: grid;
+        >p{
+            color: red;
+        }
         .popup-product__box--image{
             display: flex;
             >div{
