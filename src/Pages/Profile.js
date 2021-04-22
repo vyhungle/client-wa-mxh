@@ -23,7 +23,7 @@ function Profile(props) {
             <div className="profile">
               <Infor username={props.match.params.username}/>
               <div className="profile__content">
-                <Posts/>
+                <Posts username={props.match.params.username}/>
               </div>
             </div>
           </Col>

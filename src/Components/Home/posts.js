@@ -13,7 +13,7 @@ import PostView from "./postView";
 function Posts() {
     const {loading,data:{getPosts:posts}={}}=useQuery(GET_POSTS,{
         variables:{
-            limit:10,
+            limit:100,
         },
         pollInterval:500
         

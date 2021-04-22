@@ -10,6 +10,7 @@ export const GET_POSTS=gql`
             displayname
             image
             avatar
+            username
             comments{
             id
             createdAt
@@ -28,8 +29,8 @@ export const GET_POSTS=gql`
 }`;
 
 export const GET_MY_POSTS= gql `
-query getMyPosts($limit:Int!){
-      getMyPosts(limit:$limit) {
+query getMyPosts($username:String!,$limit:Int!){
+      getMyPosts(username:$username,limit:$limit) {
         posts{
             id
             body
@@ -120,6 +121,7 @@ query getUserProfile($username:String!){
       dateOfBirth
       story
       avatar
+      fullName
     }
     following{
       id
@@ -162,8 +164,8 @@ query getRoomChat{
 }`;
 
 export const GET_CHAT= gql `
-query getChat($roomId:ID!){
- getChat(roomId:$roomId){
+query getChatReverse($roomId:ID!){
+  getChatReverse(roomId:$roomId){
   id
   members{
       username
@@ -196,6 +198,9 @@ query getMyUser{
       avatar
       username
     }
+    profile{
+      avatar
+    }
   }
 }`;
 
@@ -210,6 +215,22 @@ query getNotification{
       avatar
       username
       createdAt
+    }
+  }
+}`;
+
+export const GET_PRODUCTS = gql `
+query getProducts{
+  getProducts{
+    id
+    body
+    price
+    address
+    createdAt
+    image
+    category
+    seller{
+      username
     }
   }
 }`;

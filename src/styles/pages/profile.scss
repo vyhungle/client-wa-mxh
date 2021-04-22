@@ -49,11 +49,15 @@
                    margin-right: 20px;
                }
            } 
+           
         }
+       >div{
         >button{
-            background-color: #FFFFFF;
+            color:white;
+            font-weight: 700;
+            background-color: #1DA1F2;
             border: solid .5px gainsboro;
-            border-radius: 20px;
+            border-radius: 15px;
             height: 40px;
             padding-left: 10px;
             padding-right: 10px;
@@ -61,10 +65,86 @@
             z-index: 10;
             right: 10px;
             top: 330px;
-
-        }
+        }      
+       }     
     }
     .profile__content{
         margin-top: 15px;
+    } 
+}
+.popup-profile{  
+    margin-left: -392px;  
+    background:rgba(0,0,0,.7);      
+  
+        .profile{       
+            padding: 15px;
+            width: 720px;
+            height: 600px;
+            outline: none;
+            .profile__inputfile__cover{                           
+                top: 140px;
+                position: absolute;
+                color: #a4acb8;
+                font-size: 30px;
+                margin-left: 327.5px;
+            }
+            .profile__inputfile__avatar{                           
+                left: -255px;
+                top: 272px;
+                z-index: 10;
+                position: absolute;
+                color: #a4acb8;
+                font-size: 30px;
+                margin-left: 327.5px;
+            }
+            .profile__inputfile{
+                display: none;
+            }
+            .profile__cover{
+                width: 685px;
+                height: 300px;
+                object-fit: cover;
+                border-radius: 20px;
+                overflow: hidden;
+               
+            }
+            .profile__avatar{
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                position: absolute;
+                left: 25px;
+                top: 240px;                   
+            }
+            .profile__inputs{
+                margin-top: 50px;
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                >input{
+                    width: 685px;
+                    height: 45px;
+                    border-radius: 15px;
+                    border:solid .75px gainsboro;
+                    outline: none;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    margin-bottom: 10px;
+                }
+                >button{
+                    width: 100px;
+                    height: 45px;
+                    border:solid .75px gainsboro;
+                    color:white;
+                    font-weight: 700;
+                    background-color: #1DA1F2;
+                    border-radius: 15px;
+                 
+                }
+            }
+        
     }
+  
+    
 }

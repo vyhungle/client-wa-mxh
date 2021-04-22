@@ -146,6 +146,13 @@ mutation following($username:String!){
   }
 }`;
 
+export const EDIT_PROFILE=gql `
+mutation editProfile($avatar:String,$dateOfBirth:String,$fullname:String!,$story:String,$coverImage:String){
+  editProfile(avatar:$avatar, dateOfBirth:$dateOfBirth, fullName:$fullname, story:$story, coverImage:$coverImage){
+    id
+  }
+}`;
+
     
    
   

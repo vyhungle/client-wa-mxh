@@ -17,7 +17,7 @@ function LoadListChat() {
     return (
         <div>
             {loading ? (
-                <p>loading..</p>
+                ""
             ):(
                 <Scrollbars style={{height:"525px" ,width:"100%", position:"absolute"}} autoHide >
                 <List className="list-Chat">

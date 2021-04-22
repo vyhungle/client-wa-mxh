@@ -34,7 +34,7 @@ function MenuTop() {
        
             <Notification/>      
             <div aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} className="menu-header__right--avatar">
-            {u ?(
+            {u && u.profile.avatar ?(
               <img src={u.profile.avatar} alt="avatar" />
             ):(
               <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png" alt="avatar" />
@@ -48,7 +48,7 @@ function MenuTop() {
               keepMounted
               open={Boolean(anchorEl)}
               onClose={handleClose}
-              style={{marginTop:"40px"}}
+             
             >
               <MenuItem onClick={handleClose}>Profile</MenuItem>
               <MenuItem onClick={handleClose}>My account</MenuItem>

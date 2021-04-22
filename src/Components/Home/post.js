@@ -3,6 +3,7 @@ import IconButton from '@material-ui/core/IconButton';
 import moment from "moment";
 import { useMutation } from "@apollo/react-hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 import FormComment from "./formComment";
 import LoadComment from "./loadComment";
@@ -18,7 +19,8 @@ function Post({ post: {
     likeCount,
     likes,
     commentCount,
-    avatar
+    avatar,
+    username
 } }) {
    
     const user = useContext(AuthContext);
@@ -44,11 +46,13 @@ function Post({ post: {
         <div className='card'>
             <div className='card__title'>
                 {avatar === null ? (<img src="https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg" alt="avatar" />):(<img src={avatar} alt="avatar" />)}
-               
                 <div className='card__title--conteint'>
+                <Link to={`/profile/${username}`} className="link">
                     <span>{displayname}</span>
+                    </Link>
                     <p>{moment(createdAt).fromNow(true)}</p>
                 </div>
+               
                 <div className="card__title--icon">
 
                 </div>

@@ -8,10 +8,11 @@ import { GET_MY_POSTS } from "../../Graphql/query";
 
 
 
-function Posts() {
+function Posts({ username }) {
     const {loading,data:{getMyPosts:posts}={}}=useQuery(GET_MY_POSTS,{
         variables:{
             limit:100,
+            username
         },
         
     })

@@ -31,10 +31,13 @@ function NavLeft() {
                 <span>Profile</span>
               </ListItem>
             </Link>
+
+            <Link to="/product" className="link">
             <ListItem button>
               <FontAwesomeIcon icon="store" />
               <span>Marke</span>
             </ListItem>
+            </Link>
             <Link to="/chat" className="link">
               <ListItem button to="/chat">
                 <FontAwesomeIcon icon="comment-dots" />

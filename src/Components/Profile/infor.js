@@ -1,18 +1,26 @@
-import React from "react";
+import React,{useContext} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useQuery } from "@apollo/react-hooks";
 
 import { GET_USER_PROFILE } from "../../Graphql/query";
+import { AuthContext } from "../../Context/auth";
+import PopupEditProfile from "./popupEditProfile";
 
 function Infor({ username }) {
+  var myusername;
+  const context = useContext(AuthContext);
+  context.user === null ? (myusername = "") : (myusername = context.user.username);
     const {loading,data:{getUser:user}={}}=useQuery(GET_USER_PROFILE,{
         variables:{
             username
         },
+        pollInterval:500
         
     })
   return (
-    <div className="profile__top">
+    <>
+    {loading?(""):
+    (<div className="profile__top">
       {user && (
         <>
         {user.profile.coverImage===null ?
@@ -58,8 +66,12 @@ function Infor({ username }) {
           </div>
         </>
       )}
-      <button>Edit profile</button>
-    </div>
+      {user.username===myusername?(
+        <PopupEditProfile username={username}/>
+        ):( "")}
+     
+    </div>)}
+    </>
   );
 }
 

@@ -11,7 +11,7 @@ function ContentChat({ id }) {
   var username;
   const context = useContext(AuthContext);
   context.user === null ? (username = "") : (username = context.user.username);
-  const { data: { getChat: chat } = {} } = useQuery(GET_CHAT, {
+  const { data: { getChatReverse: chat } = {} } = useQuery(GET_CHAT, {
     variables: { roomId: id },
     pollInterval: 500,
   });
