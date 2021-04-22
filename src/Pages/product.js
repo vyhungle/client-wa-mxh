@@ -36,7 +36,7 @@ function Product() {
                         <img src={p.image}/>
                         <div className="product__cart--body">
                             <h5>{p.price} <span>đ</span></h5>
-                            <p>{p.body}</p>
+                            <p style={{fontWeight:"700"}}>{p.body}</p>
                             <p>{p.address}</p>
                         </div>
                     </div>

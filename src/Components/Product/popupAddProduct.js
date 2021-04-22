@@ -91,9 +91,9 @@ function PopupAddProduct() {
                   </div>
                 </div>
                 <select
-                  name="category"
-                  id="category"
-                  value={formProps.values.category}
+                  name="address"
+                  id="address"
+                  value={formProps.values.address}
                   onChange={formProps.handleChange}
                 >
                   <option value="Thành phố Hà Nội">Thành phố Hà Nội</option>
@@ -166,9 +166,9 @@ function PopupAddProduct() {
                 </select>
 
                 <select
-                  name="address"
-                  id="address"
-                  value={formProps.values.address}
+                  name="category"
+                  id="category"
+                  value={formProps.values.category}
                   onChange={formProps.handleChange}
                 >
                   <option value="Xe cộ">Xe cộ</option>
