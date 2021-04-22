@@ -153,6 +153,33 @@ mutation editProfile($avatar:String,$dateOfBirth:String,$fullname:String!,$story
   }
 }`;
 
+export const CREATE_PRODUCT= gql `
+mutation createProduct($image:String!,$price:String!,$address:String!,$body:String!,$category:String!,){
+  createProduct(image:$image,price:$price,address:$address,body:$body,category:$category){
+    error{
+      field
+      message
+    }
+    product{
+      id
+      price
+      body
+      address
+      createdAt
+      image
+      category
+      seller{
+        id
+        username
+        displayname
+        profile{
+          avatar
+        }
+      }
+    }
+  }
+}`;
+
     
    
   

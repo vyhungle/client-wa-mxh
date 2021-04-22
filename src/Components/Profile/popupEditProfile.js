@@ -73,7 +73,6 @@ function PopupEditProfile({username}) {
                     coverImage:user.profile.coverImage
                   }}
                   onSubmit={(values)=>{
-                    console.log(values)
                     editProfile({
                       variables:values
                     })
@@ -126,8 +125,7 @@ function PopupEditProfile({username}) {
                                 value={formProps.values.fullname}
                                 onChange={formProps.handleChange}
                             />
-                            <input 
-                              
+                            <input                              
                                 id="dateOfBirth"
                                 type="date"
                                 placeholder="Date Of Birth"

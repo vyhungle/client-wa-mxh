@@ -45,7 +45,9 @@ function Notification() {
           <h5>NOTIFICATION</h5>
             {ntf && ntf.notifications.map((n) => (
                 <div key={n.id}>
-                  <img src={n.avatar}></img>
+                {n.avatar?(<img src={n.avatar}></img>):
+                (<img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"></img>)}
+                  
                   <div>
                   <div>
                   <p><span>{n.displayname}</span> {n.title}</p>    

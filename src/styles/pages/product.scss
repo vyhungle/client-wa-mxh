@@ -2,12 +2,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-right: 30px;
+    overflow-y: scroll;
     .product__cart{
         width: 260px;
         margin-bottom: 15px;
         border-radius: 20px;
         background-color: #FFFFFF;
-        height: 300px;
+        min-height: 300px;
         border:solid .75px gainsboro;
         >img{
             border-top-left-radius:20px ;
@@ -30,5 +31,85 @@
             }
         }
 
+    }
+}
+.product__top{
+    display: flex;
+    margin-bottom: 20px;
+    color: #A4ACB8;
+    .product__top--add{
+        position: absolute;
+        right: 50px;
+        border: none;
+        color: white;
+        font-weight: 700;
+        border-radius: 15px;
+        background-color: #1DA1F2;
+        height: 40px;
+        &:hover{
+            background-color: #1074b8;
+        }
+    }
+    .product__top--filter{
+        color: #A4ACB8;
+        height: 40px;
+        position: absolute;
+        right: 190px;
+    }
+}
+
+.popup-product{
+    background:rgba(0,0,0,.7);     
+    margin-left: -400px;
+    .popup-product__box{
+        outline: none;
+        width: 700px;
+        height: 400px;
+        padding: 20px;
+      
+       >form{
+        display: grid;
+        .popup-product__box--image{
+            display: flex;
+            >div{
+                color: #A4ACB8;
+                height: 70px;
+                width: 70px;
+                border:solid .75px gainsboro;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 15px;
+                margin-bottom: 10px;
+            }
+            >img{
+                height: 70px;
+                width: 70px;
+                border-radius: 15px;
+                margin-right: 10px;
+                object-fit: cover;
+            }
+        }
+        >input,select{
+            height: 40px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            border: solid .75px gainsboro;
+            outline: none;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        >button{
+            width: 180px;
+            background-color: #1DA1F2;
+            color: white;
+            font-weight: 700;
+            border-radius: 15px;
+            height: 40px;
+            margin-left: 230px;
+           
+        }
+      
+       }
     }
 }
