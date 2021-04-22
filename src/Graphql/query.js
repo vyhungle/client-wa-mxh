@@ -209,6 +209,7 @@ query getNotification{
   getNotification{
     count
     notifications{
+      type
       id
       displayname
       title
@@ -231,6 +232,26 @@ query getProducts{
     category
     seller{
       username
+    }
+  }
+}`;
+
+export const GET_PRODUCT= gql `
+query getProduct($productId:ID!){
+  getProduct(productId:$productId){
+    id
+    price
+    body
+    address
+    createdAt
+    image
+    category
+    seller{
+      username
+      displayname
+      profile{
+        avatar
+      }
     }
   }
 }`;

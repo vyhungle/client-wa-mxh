@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useQuery } from "@apollo/react-hooks";
 import FilterListIcon from '@material-ui/icons/FilterList';
 import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
 
 import MenuTop from "../Components/Menu/menuTop";
 import MenuLeft from "../Components/Menu/navLeft";
@@ -32,6 +33,7 @@ function Product() {
           </div>
             <div className="product">
                 {product && product.map((p)=>(
+                  <Link className="link" to={`/product/${p.id}`} className="link">
                     <div key={p.id} className="product__cart">
                         <img src={p.image}/>
                         <div className="product__cart--body">
@@ -40,6 +42,7 @@ function Product() {
                             <p>{p.address}</p>
                         </div>
                     </div>
+                    </Link>
                 ))}
             </div>
           </Col>

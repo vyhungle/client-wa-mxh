@@ -111,6 +111,16 @@
                 object-fit: cover;
                 overflow: hidden;
             }
+            .icon{
+                width: 30px;
+                height: 30px;
+                position: relative;
+                margin-left: -15px;
+                margin-top: 20px;
+                border-radius: 0;
+                object-fit: cover;
+                border-radius: 50%;
+            }
             >div{
                 display: flex;
                 justify-content: center;

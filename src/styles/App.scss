@@ -23,6 +23,7 @@
 @import '../styles/pages/roomChat.scss';
 @import './pages/profile.scss';
 @import './pages//product.scss';
+@import './pages//productDetail.scss';
 
 body{
   background-color: #F7F7FA;
@@ -44,8 +45,10 @@ html {
 
 .link{
   text-decoration: none;
+  color: black;
   &:hover{
     text-decoration: none;
+    color: rgb(87, 87, 87);
   }
 }
 

@@ -14,7 +14,7 @@ import Register from "./Pages/register";
 import Chat from "./Pages/roomChat";
 import Profile from "./Pages/Profile";
 import Product from "./Pages/product";
-
+import ProductDetail from "./Pages/productDetail";
 
 
 function App() {
@@ -27,7 +27,8 @@ function App() {
           <Route exact path='/chat' component={Chat}/>  
           <Route exact path='/chat/:id' component={Chat}/> 
           <Route exact path='/profile/:username' component={Profile}/>  
-          <Route exact path='/product' component={Product}/>   
+          <Route exact path='/product' component={Product}/>
+          <Route exact path='/product/:id' component={ProductDetail}/>   
        </Router>   
      </AuthProvider>
   );
