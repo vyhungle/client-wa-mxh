@@ -56,6 +56,7 @@ function PopupAddProduct() {
               address: "Thành phố Hà Nội",
               body: "",
               category: "Xe cộ",
+              describe:"",
             }}
             onSubmit={(values) => {          
               createProduct({
@@ -228,6 +229,13 @@ function PopupAddProduct() {
                   value={formProps.values.price}
                   onChange={formProps.handleChange}
                   placeholder="Giá"
+                />
+                <textarea
+                  type="textarea"
+                  id="describe"
+                  placeholder="Mô tả sản phẩm"
+                  value={formProps.values.describe}
+                  onChange={formProps.handleChange}
                 />
                 {loading ?(<Button ><CircularProgress color="primary" /></Button>):(<Button type="submit">Create Product</Button>)}
                 

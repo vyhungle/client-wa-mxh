@@ -102,6 +102,15 @@
             padding-left: 15px;
             padding-right: 15px;
         }
+        >textarea{
+            height: 100px;
+            outline: none;
+            border-radius: 15px;
+            border-bottom-right-radius:0 ;
+            border: solid .75px gainsboro;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
         >button{
             width: 180px;
             background-color: #1DA1F2;

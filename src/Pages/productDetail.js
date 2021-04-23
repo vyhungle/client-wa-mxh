@@ -10,7 +10,7 @@ import MenuLeft from "../Components/Menu/navLeft";
 import { GET_PRODUCT } from "../Graphql/query";
 function ProductDetail(props) {
   var productId = props.match.params.id;
-  const { loading, data: { getProduct: product } = {} } = useQuery(
+  const {data: { getProduct: product } = {} } = useQuery(
     GET_PRODUCT,
     { variables: { productId } }
   );
@@ -40,7 +40,13 @@ function ProductDetail(props) {
                       <ChatBubbleOutlineIcon style={{ marginRight: "5px" }} />
                       <span>Nhắn tin</span>
                     </Button>
-                    <h6>Thông tin về người bán</h6>
+                    {product.describe && (
+                      <div className="product-detail__describe">
+                        <h6>MÔ TẢ SẢN PHẨM</h6>
+                        <p>{product.describe}</p>
+                      </div>
+                    )}
+                    <h6>THÔNG TIN VỀ NGƯỜI BÁN</h6>
                     <div>
                       <Link className="link" to={`/profile/${product.seller.username}`}>
                         <img alt="avatar" src={product.seller.profile.avatar} />

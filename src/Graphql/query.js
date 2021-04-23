@@ -246,6 +246,7 @@ query getProduct($productId:ID!){
     createdAt
     image
     category
+    describe
     seller{
       username
       displayname
