@@ -2,33 +2,40 @@ import React from "react";
 import { Formik, Form } from "formik";
 import { useMutation } from "@apollo/react-hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { CREATE_POST } from "../../Graphql/mutation";
 
 function PopupPost(props) {
-  var base64Image = "";
+  var base64Image = [];
 
   function uploadImage(files, formProps) {
-    const file = files[0];
+    for (var i = 0; i < files.length; i++) {
+      var file = files[i];
+      randerImage(file);
+    }
+    console.log(base64Image);
+    formProps.setFieldValue("image", base64Image);
+  }
+  function randerImage(file){
     var reader = new FileReader();
     reader.onloadend = function () {
-      base64Image = reader.result;
-      formProps.setFieldValue("image", base64Image);
+      base64Image.push(reader.result);
     };
     reader.readAsDataURL(file);
   }
 
-  const [createPost] = useMutation(CREATE_POST);
+  const [createPost, { loading }] = useMutation(CREATE_POST);
 
   return (
     <div>
       <Formik
         initialValues={{
           body: "",
-          image: "",
+          image: [],
         }}
         onSubmit={(values) => {
-          if (values.body === "" && values.image === "") {
+          if (values.body === "" && values.image.length === 0) {
           } else {
             createPost({
               variables: values,
@@ -59,26 +66,31 @@ function PopupPost(props) {
                         onChange={formProps.handleChange}
                       />
                       <label htmlFor="image">
-                          {" "}
-                          <FontAwesomeIcon icon="images" />
-                        </label>
+                        {" "}
+                        <FontAwesomeIcon icon="images" />
+                      </label>
                     </div>
 
                     <div className="popup-post__box--submit">
-                    {base64Image && (<img src={base64Image} alt="imagepost"/>)}
-                          
-                          
+                      {base64Image && <img src={base64Image} alt="imagepost" />}
+
                       <div>
-                       
                         <input
+                          multiple
                           id="image"
                           name="image"
                           type="file"
                           onChange={(e) => {
                             uploadImage(e.target.files, formProps);
                           }}
-                        />                    
-                        <button type="submit">submit</button>
+                        />
+                        {loading ? (
+                          <button type="submit">
+                            <CircularProgress color="primary" />
+                          </button>
+                        ) : (
+                          <button type="submit">submit</button>
+                        )}
                       </div>
                     </div>
                   </Form>

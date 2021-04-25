@@ -90,7 +90,7 @@ mutation register(
 
 
 export const CREATE_POST=gql `
-  mutation createPost($body:String,$image:String){
+  mutation createPost($body:String,$image:[String]){
   createPost(body:$body, image:$image){
     id  
     body

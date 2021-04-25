@@ -48,10 +48,12 @@ function NavLeft() {
               <FontAwesomeIcon icon="user-friends" />
               <span>Friends</span>
             </ListItem>
-            <ListItem button>
-              <FontAwesomeIcon icon="users" />
-              <span>Groups</span>
-            </ListItem>
+            <Link to="/group" className="link">
+              <ListItem button>
+                <FontAwesomeIcon icon="users" />
+                <span>Groups</span>
+              </ListItem>
+            </Link>
           </List>
         </Col>
       </Row>

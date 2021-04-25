@@ -21,6 +21,7 @@ function Posts() {
  
     return (  
     <div>
+   
         <PostView/>  
             {loading ? (
                 <CircularProgress color="primary" />
