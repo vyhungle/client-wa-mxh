@@ -122,13 +122,13 @@ function Post({
                                         src={i}
                                         alt="imagepost"
                                         className="last-image"
-                                        key={i}
+                                        key={index}
                                       />
-                                     <p>{image.length - 4}+</p>
+                                     <p key="po">{image.length - 4}+</p>
                                       
                                     </>
                                   ) : (
-                                    <img src={i} alt="imagepost"  key={i}/>
+                                    <img src={i} alt="imagepost"  key={index}/>
                                   )}
                                 </>
                               ) : (
@@ -136,7 +136,7 @@ function Post({
                                   src={i}
                                   alt="imagepost"
                                   style={{ display: "none" }}
-                                  key={i}
+                                  key={index}
                                 />
                               )}
                             </>

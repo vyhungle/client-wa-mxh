@@ -4,12 +4,12 @@ import Menu from "@material-ui/core/Menu";
 import { Form, Formik } from "formik";
 import { useMutation } from "@apollo/react-hooks";
 import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
-import CircularProgress from '@material-ui/core/CircularProgress';
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { CREATE_PRODUCT } from "../../Graphql/mutation";
-import { categories,addresses } from "../../util/data";
+import { categories, addresses } from "../../util/data";
 
-var errors = {}
+var errors = {};
 function PopupAddProduct() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -21,16 +21,15 @@ function PopupAddProduct() {
     setAnchorEl(null);
   };
 
-  var Image=[];
-
+  var Image = [];
 
   function uploadImage(files, formProps) {
     for (var i = 0; i < files.length; i++) {
       var file = files[i];
-      randerImage(file,formProps);
-    }    
+      randerImage(file, formProps);
+    }
   }
-  function randerImage(file,formProps){
+  function randerImage(file, formProps) {
     var reader = new FileReader();
     reader.onloadend = function () {
       Image.push(reader.result);
@@ -56,7 +55,7 @@ function PopupAddProduct() {
         className="popup-product"
       >
         <div className="popup-product__box">
-        <h5>ADD PRODUCT</h5>
+          <h5>ADD PRODUCT</h5>
           <Formik
             initialValues={{
               image: [],
@@ -64,39 +63,33 @@ function PopupAddProduct() {
               address: "Thành phố Hà Nội",
               body: "",
               category: "Xe cộ",
-              describe:"",
+              describe: "",
             }}
-            onSubmit={(values) => {    
+            onSubmit={(values) => {
               createProduct({
-                  variables:values,
-                  update(proxy, { data: { createProduct: product } = {} }) {
-                    errors = {}
-                    if (product.error) {
-                        for (var i = 0; i < product.error.length; i++) {
-                            if (product.error[i].field === "image") {
-                                errors.image = product.error[i].message
-                            }
-                            else if(product.error[i].field === "price") {
-                                errors.price = product.error[i].message
-                            }
-                            else if(product.error[i].field === "address") {
-                                errors.address = product.error[i].message
-                            }
-                            else if(product.error[i].field === "body") {
-                                errors.body = product.error[i].message
-                            }
-                            else errors.category = product.error[i].message
-                        }
-                    }               
+                variables: values,
+                update(proxy, { data: { createProduct: product } = {} }) {
+                  errors = {};
+                  if (product.error) {
+                    for (var i = 0; i < product.error.length; i++) {
+                      if (product.error[i].field === "image") {
+                        errors.image = product.error[i].message;
+                      } else if (product.error[i].field === "price") {
+                        errors.price = product.error[i].message;
+                      } else if (product.error[i].field === "address") {
+                        errors.address = product.error[i].message;
+                      } else if (product.error[i].field === "body") {
+                        errors.body = product.error[i].message;
+                      } else errors.category = product.error[i].message;
+                    }
+                  }
                 },
-              }) 
+              });
             }}
           >
             {(formProps) => (
               <Form>
-                {errors.body&&(
-                  <p>{errors.body}</p>
-                )}
+                {errors.body && <p>{errors.body}</p>}
                 <input
                   id="body"
                   type="text"
@@ -104,29 +97,26 @@ function PopupAddProduct() {
                   onChange={formProps.handleChange}
                   placeholder="Tên sản phẩm"
                 />
-                
+
                 <input
                   multiple
                   id="image"
-                  type="file"                 
+                  type="file"
                   onChange={(e) => {
                     uploadImage(e.target.files, formProps);
-                  }}             
+                  }}
                   style={{ display: "none" }}
-                
                 />
-                {errors.image&&(
-                  <p>{errors.image}</p>
-                )}
+                {errors.image && <p>{errors.image}</p>}
                 <div className="popup-product__box--image">
-                {Image?(
-                  <>
-                    {Image.map((i,index)=>(
-                      <img src={i} alt="img product" key={index}/>
-                    ))}
-                  </>
-                ):(
-                      ""
+                  {Image ? (
+                    <>
+                      {Image.map((i, index) => (
+                        <img src={i} alt="img product" key={index} />
+                      ))}
+                    </>
+                  ) : (
+                    ""
                   )}
                   <div>
                     <label htmlFor="image">
@@ -140,9 +130,9 @@ function PopupAddProduct() {
                   value={formProps.values.address}
                   onChange={formProps.handleChange}
                 >
-                 {addresses.map((a)=>(
-                   <option value={a}>{a}</option>
-                 ))}
+                  {addresses.map((a,index) => (
+                    <option value={a} key={index}>{a}</option>
+                  ))}
                 </select>
 
                 <select
@@ -151,13 +141,11 @@ function PopupAddProduct() {
                   value={formProps.values.category}
                   onChange={formProps.handleChange}
                 >
-                 {categories.map((c)=>(
-                   <option value={c}>{c}</option>
-                 ))}
+                  {categories.map((c,index) => (
+                    <option value={c} key={index}>{c}</option>
+                  ))}
                 </select>
-                {errors.price&&(
-                  <p>{errors.price}</p>
-                )}
+                {errors.price && <p>{errors.price}</p>}
                 <input
                   id="price"
                   type="text"
@@ -172,8 +160,13 @@ function PopupAddProduct() {
                   value={formProps.values.describe}
                   onChange={formProps.handleChange}
                 />
-                {loading ?(<Button ><CircularProgress color="primary" /></Button>):(<Button type="submit">Create Product</Button>)}
-                
+                {loading ? (
+                  <Button>
+                    <CircularProgress color="primary" />
+                  </Button>
+                ) : (
+                  <Button type="submit">Create Product</Button>
+                )}
               </Form>
             )}
           </Formik>

@@ -47,8 +47,8 @@ function ProductDetail(props) {
                       {product.price}{" "}
                       <span style={{ textDecoration: "underline" }}>đ</span>
                     </p>
-                    <p>{product.category}</p>
-                    <p>{product.address}</p>
+                    <p>{product.category.name}</p>
+                    <p>{product.address.location}</p>
                     <Button>
                       <ChatBubbleOutlineIcon style={{ marginRight: "5px" }} />
                       <span>Nhắn tin</span>

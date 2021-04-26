@@ -226,10 +226,16 @@ query getProducts{
     id
     body
     price
-    address
+    address{
+      location
+      zipcode
+    }
     createdAt
     image
-    category
+    category{
+      name
+      slug
+    }
     seller{
       username
     }
@@ -242,10 +248,16 @@ query getProduct($productId:ID!){
     id
     price
     body
-    address
+    address{
+      location
+      zipcode
+    }
     createdAt
     image
-    category
+    category{
+      name
+      slug
+    }
     describe
     seller{
       username

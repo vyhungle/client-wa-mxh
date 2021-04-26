@@ -5,6 +5,9 @@ import { useQuery } from "@apollo/react-hooks";
 import moment from "moment";
 
 import { GET_NOTIFICATIONS } from "../../Graphql/query";
+import likeIcon from "../../Fonts/icons/like.png";
+import commentIcon from "../../Fonts/icons/notification.png";
+import followIcon from "../../Fonts/icons/friend-request.png";
 
 function Notification() {
   const { data: { getNotification: ntf } = {} } = useQuery(GET_NOTIFICATIONS, {
@@ -48,10 +51,10 @@ function Notification() {
                 {n.avatar?(<img src={n.avatar}></img>):
                 (<img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png"></img>)}
                   {n.type==="Like"?(
-                    <img className="icon" alt="like" src="https://www.flaticon.com/svg/vstatic/svg/1182/1182670.svg?token=exp=1619098201~hmac=e5a816b7fd8e2d163df7c4b6e1d227e4"/>
+                    <img className="icon" alt="like" src={likeIcon}/>
                   ):(<>
-                    {n.type==="Comment"?( <img className="icon" alt="comment" src="https://www.flaticon.com/svg/vstatic/svg/1182/1182672.svg?token=exp=1619098304~hmac=233f4ac3d0407716ef002a5c2899a22a"/>)
-                    :(<img className="icon" alt="follow" src="https://www.flaticon.com/svg/vstatic/svg/1182/1182673.svg?token=exp=1619098304~hmac=159e3d51449e0579035c4801349bba13"/>)}
+                    {n.type==="Comment"?( <img className="icon" alt="comment" src={commentIcon}/>)
+                    :(<img className="icon" alt="follow" src={followIcon}/>)}
                   </>)}
                   <div>
                   <div>

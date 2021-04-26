@@ -1,14 +1,14 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { useQuery } from "@apollo/react-hooks";
-import FilterListIcon from "@material-ui/icons/FilterList";
-import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 
 import MenuTop from "../Components/Menu/menuTop";
 import MenuLeft from "../Components/Menu/navLeft";
 import { GET_PRODUCTS } from "../Graphql/query";
 import PopupAddProduct from "../Components/Product/popupAddProduct";
+import PopupFillter from "../Components/Product/popupFillter";
+import MenuFillter from "../Components/Product/menuFillter";
 
 function Product() {
   const { loading, data: { getProducts: product } = {} } = useQuery(
@@ -23,17 +23,16 @@ function Product() {
       <MenuTop />
       <Container fluid className="layout">
         <Row>
-          <Col xs={3} className="layout__left">
-            <MenuLeft />
+          <Col xs={3} className="layout__left" >
+            <MenuFillter/>
+         
           </Col>
 
           <Col className="layout__content">
             <div className="product__top">
               <h5>ALL PRODUCT</h5>
               <PopupAddProduct />
-              <Button className="product__top--filter">
-                <FilterListIcon />
-              </Button>
+              <PopupFillter/>
             </div>
             <div className="product">
               {product &&
@@ -51,7 +50,7 @@ function Product() {
                           {p.price} <span>đ</span>
                         </h5>
                         <p style={{ fontWeight: "700" }}>{p.body}</p>
-                        <p>{p.address}</p>
+                        <p>{p.address.location}</p>
                       </div>
                     </div>
                   </Link>
