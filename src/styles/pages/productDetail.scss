@@ -14,6 +14,9 @@
         height: 400px;
         object-fit: cover;
         overflow: hidden;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-left: 6px;
       }
       .image-list{
           display: flex;
@@ -26,9 +29,9 @@
             height: 70px;
             border-radius: 10px;
             overflow: hidden;
-            object-fit: fill;
+            object-fit: cover;
             border:solid .5px gainsboro;
-            padding: 5px;
+            
          }
       }
     }

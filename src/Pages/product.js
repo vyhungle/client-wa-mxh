@@ -39,11 +39,12 @@ function Product() {
               {product &&
                 product.map((p) => (
                   <Link
+                     key={p.id}
                     className="link"
                     to={`/product/${p.id}`}
                     className="link"
                   >
-                    <div key={p.id} className="product__cart">
+                    <div  className="product__cart">
                       <img src={p.image[0]} />
                       <div className="product__cart--body">
                         <h5>

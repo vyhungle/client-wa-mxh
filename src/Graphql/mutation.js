@@ -154,7 +154,7 @@ mutation editProfile($avatar:String,$dateOfBirth:String,$fullname:String!,$story
 }`;
 
 export const CREATE_PRODUCT= gql `
-mutation createProduct($image:String!,$price:String!,$address:String!,$body:String!,$category:String!,$describe:String){
+mutation createProduct($image:[String]!,$price:String!,$address:String!,$body:String!,$category:String!,$describe:String){
   createProduct(image:$image,price:$price,address:$address,body:$body,category:$category,describe:$describe){
     error{
       field
