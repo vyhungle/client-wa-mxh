@@ -37,6 +37,23 @@
   display: flex;
   margin-bottom: 20px;
   color: #a4acb8;
+ >div{
+   font-size: 15px;
+    display: flex;
+    position: relative;
+    left: 500px;
+    align-items: center;
+    justify-content: center;
+  
+  >span{
+   
+    font-weight: 600;
+    padding-right: 15px;
+  }
+  >a{
+    margin-right: 10px;
+  }
+ }
   .product__top--add {
     position: absolute;
     right: 50px;

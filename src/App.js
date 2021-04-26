@@ -26,7 +26,7 @@ function App() {
         <Route exact path="/chat" component={Chat} />
         <Route exact path="/chat/:id" component={Chat} />
         <Route exact path="/profile/:username" component={Profile} />
-        <Route exact path="/product" component={Product} />
+        <Route exact path="/product/:categories/:address/:type" component={Product} />
         <Route exact path="/product/:id" component={ProductDetail} />
         <Route exact path="/group" component={Group} />
       </Router>

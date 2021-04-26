@@ -221,8 +221,8 @@ query getNotification{
 }`;
 
 export const GET_PRODUCTS = gql `
-query getProducts{
-  getProducts{
+query getProducts($category:String,$address:String,$sort:Int){
+  getProducts(category:$category, address:$address,sort:$sort){
     id
     body
     price
