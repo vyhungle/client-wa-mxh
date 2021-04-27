@@ -10,6 +10,7 @@ import { useQuery } from "@apollo/react-hooks";
 import Notification from "../Notification/notification";
 import { AuthContext } from "../../Context/auth";
 import { GET_MY_USER } from "../../Graphql/query";
+import logoIcon from "../../Fonts/icons/logoV.png";
 
 function MenuTop() {
     const {user,logout}=useContext(AuthContext);
@@ -25,7 +26,11 @@ function MenuTop() {
     return (
         <Container fluid className="menu-header">
         <Row>
-          <Col xs={3}></Col>
+          <Col xs={3} className="menu-logo">
+              <Link to="/" className="link">
+                <img src={logoIcon} alt="logo"/> Social Network
+              </Link>
+          </Col>
           <Col className="menu-header_input">
             <SearchIcon />
             <InputBase placeholder='Search...' />

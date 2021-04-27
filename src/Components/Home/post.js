@@ -73,7 +73,7 @@ function Post({
         <div className="card__title--icon"></div>
       </div>
       <div className="card__body">{body}</div>
-      {image[0] === "" ? (
+      {image.length === 0 ? (
         ""
       ) : (
         <div className="card__image">

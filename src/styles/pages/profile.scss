@@ -70,6 +70,20 @@
     }
     .profile__content{
         margin-top: 15px;
+        .profile__content--nav{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            >button{
+                width: 100px;
+                color: black;
+                font-weight: 600;
+                background-color: white;
+                margin-right: 10px;
+                border-radius: 10px;
+            }
+        }
     } 
 }
 .popup-profile{  

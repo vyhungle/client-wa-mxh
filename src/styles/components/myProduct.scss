@@ -1,0 +1,42 @@
+.my-product {
+  .my-product__cart {
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    border: solid 0.75px gainsboro;
+    display: flex;
+    align-items: center;
+    > img {
+      width: 150px;
+      height: 150px;
+      border-radius: 15px;
+      overflow: hidden;
+      border: solid 0.5px gainsboro;
+      margin-right: 15px;
+    }
+    > div {
+        >h5{
+            margin-bottom: 5px;
+        }
+        >p{
+            margin-bottom: 5px;
+        }
+      .btn-edit {
+        background-color: #1da1f2;
+        color: white;
+        width: 80px;
+        font-weight: 500;
+        border-radius: 10px;
+        margin-right: 10px;
+      }
+      .btn-delete {
+        width: 80px;
+        background-color: #F05D40;
+        color: white;
+        font-weight: 500;
+        border-radius: 10px;
+        margin-right: 10px;
+      }
+    }
+  }
+}

@@ -270,6 +270,36 @@ query getProduct($productId:ID!){
 }`;
 
 
+export const GET_LOCATIONS =gql `
+query getLocations{
+  getLocations{
+	  id
+    location
+    zipcode
+  }
+}`
+
+export const GET_MY_PRODUCTS= gql `
+query getMyProducts{
+  getMyProducts{
+    image
+    price
+    id
+    body
+    describe
+    address{
+      location
+    }
+    category{
+      name
+    }
+    seller{
+      username
+    }
+  }
+}`
+
+
     
    
   
