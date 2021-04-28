@@ -1,4 +1,4 @@
-import React,{ useContext } from "react";
+import React, { useContext } from "react";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -33,10 +33,10 @@ function NavLeft() {
             </Link>
 
             <Link to="/product/all/all/0" className="link">
-            <ListItem button>
-              <FontAwesomeIcon icon="store" />
-              <span>Market</span>
-            </ListItem>
+              <ListItem button>
+                <FontAwesomeIcon icon="store" />
+                <span>Market</span>
+              </ListItem>
             </Link>
             <Link to="/chat" className="link">
               <ListItem button to="/chat">
@@ -44,10 +44,14 @@ function NavLeft() {
                 <span>Messages</span>
               </ListItem>
             </Link>
-            <ListItem button>
-              <FontAwesomeIcon icon="user-friends" />
-              <span>Friends</span>
-            </ListItem>
+
+       {/*      <Link to="/friend" className="link">
+              <ListItem button>
+                <FontAwesomeIcon icon="user-friends" />
+                <span>Friends</span>
+              </ListItem>
+            </Link> */}
+
             <Link to="/group" className="link">
               <ListItem button>
                 <FontAwesomeIcon icon="users" />
@@ -58,7 +62,7 @@ function NavLeft() {
         </Col>
       </Row>
     </div>
-  )
+  );
 }
 
-export default NavLeft
+export default NavLeft;

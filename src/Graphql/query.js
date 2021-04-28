@@ -85,11 +85,7 @@ query getUser {
       following
       story
     }
-   friends{
-    id
-    username
-    createdAt
-  }
+  
     
   }
 }

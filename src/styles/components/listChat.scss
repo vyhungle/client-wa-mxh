@@ -52,6 +52,7 @@
         .list-Chat{
             padding: 0;
             .list-Chat__item{
+            
               /*   border-bottom: solid .75px gainsboro; */
                 >img{
                     height: 50px;
@@ -59,11 +60,17 @@
                     object-fit: cover;
                     border-radius: 50%;
                 }
-                >p{
-                    margin-left:15px;
-                    font-size: 18px;
-                    font-weight: 450;
-                    margin-top: 10px;
+                >div{
+                 
+                  margin-left: 10px;
+                  .p-name{     
+                    padding-top: 10px;           
+                    margin: 0;                
+                    font-weight: 700;
+                  }
+                  .p-username{
+                    color: #A4ACB8;
+                  }
                 }
             }
         }

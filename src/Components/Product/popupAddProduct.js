@@ -5,6 +5,7 @@ import { Form, Formik } from "formik";
 import { useMutation } from "@apollo/react-hooks";
 import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import { Input } from '@material-ui/core';
 
 import { CREATE_PRODUCT } from "../../Graphql/mutation";
 import { categories, addresses } from "../../util/data";
@@ -92,6 +93,7 @@ function PopupAddProduct() {
                 {errors.body && <p>{errors.body}</p>}
                 <input
                   id="body"
+                  name="body"
                   type="text"
                   value={formProps.values.body}
                   onChange={formProps.handleChange}
@@ -148,7 +150,7 @@ function PopupAddProduct() {
                 {errors.price && <p>{errors.price}</p>}
                 <input
                   id="price"
-                  type="text"
+                  type="number"
                   value={formProps.values.price}
                   onChange={formProps.handleChange}
                   placeholder="Giá"
@@ -161,11 +163,11 @@ function PopupAddProduct() {
                   onChange={formProps.handleChange}
                 />
                 {loading ? (
-                  <Button>
+                  <button type="submit">
                     <CircularProgress color="primary" />
-                  </Button>
+                  </button>
                 ) : (
-                  <Button type="submit">Create Product</Button>
+                  <button type="submit" >Create Product</button>
                 )}
               </Form>
             )}

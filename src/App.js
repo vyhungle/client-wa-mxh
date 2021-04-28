@@ -15,6 +15,7 @@ import Profile from "./Pages/Profile";
 import Product from "./Pages/product";
 import ProductDetail from "./Pages/productDetail";
 import Group from "./Pages/group";
+
 function App() {
   return (
     <AuthProvider>
@@ -29,6 +30,7 @@ function App() {
         <Route exact path="/product/:categories/:address/:type" component={Product} />
         <Route exact path="/product/:id" component={ProductDetail} />
         <Route exact path="/group" component={Group} />
+
       </Router>
     </AuthProvider>
   );

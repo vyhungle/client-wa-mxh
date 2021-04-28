@@ -3,7 +3,6 @@ import React from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 
 import MenuTop from "../Components/Menu/menuTop";
-import ListFriend from "../Components/Home/friendList";
 import MenuLeft from "../Components/Menu/navLeft";
 import Posts from "../Components/Home/posts";
 import ListUser from "../Components/Home/loadUser";
@@ -30,7 +29,7 @@ export default function Home() {
                 <Row>
                   <Col xs={10}>
                   <ListUser/>                          
-                  <ListFriend/>                   
+                {/*   <ListFriend/>            */}        
                   </Col>
                   <Col xs={2}></Col>
                 </Row>

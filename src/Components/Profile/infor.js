@@ -60,7 +60,7 @@ function Infor({ username }) {
             <div>
               <p>{user.following.length}</p>
               <span>Following</span>
-              <p>{user.following.length}</p>
+              <p>{user.follower.length}</p>
               <span>Follower</span>
             </div>
           </div>
